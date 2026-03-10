@@ -8,13 +8,19 @@ describe('Home page', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /A portfolio for the teams you're building/i,
+        name: /Felmon Fekadu\. Full-stack engineer for real products\./i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /Closer to a product story, further from a resume grid/i,
+        name: /The profile behind the repositories/i,
+      })
+    ).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', {
+        name: /How I work, what I build, and what counts as proof/i,
       })
     ).toBeInTheDocument()
 

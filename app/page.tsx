@@ -4,7 +4,7 @@ import { experiences, proofOfWork, projects, resumeLinks, socialLinks, stats } f
 import { normalizeExternalUrl } from '@/lib/url'
 
 const navItems = [
-  { label: 'Story', href: '#story' },
+  { label: 'Profile', href: '#profile' },
   { label: 'Work', href: '#work' },
   { label: 'Proof', href: '#proof' },
   { label: 'Contact', href: '#contact' },
@@ -18,30 +18,70 @@ const socialIconMap: Record<string, LucideIcon> = {
 
 const chapters = [
   {
-    eyebrow: 'Quiet Surface',
-    title: 'The interface should calm down fast.',
+    eyebrow: 'How I Work',
+    title: 'Start with the product. Make the system hold up.',
     copy:
-      'The best part of Thine is its restraint. It does not try to prove intelligence with more UI. It clears the frame, sets a tone, and lets the hierarchy do the work.',
-    points: ['Centered hero', 'Large serif display', 'Minimal chrome'],
+      'I care about interfaces that read clearly, state that stays coherent, and implementation that survives iteration instead of collapsing after the first polished demo.',
+    points: ['Calm UX', 'State discipline', 'Maintainable implementation'],
     variant: 'memory',
   },
   {
-    eyebrow: 'Connected Depth',
-    title: 'The depth belongs underneath, not everywhere on screen.',
+    eyebrow: 'What I Build',
+    title: 'Full-stack software where AI is one capability among many.',
     copy:
-      'My work lives in the same tension: full-stack products, real-time collaboration, model-powered workflows, and public code that still needs to feel composed from the first glance.',
-    points: ['Coherent state', 'Readable architecture', 'Real constraints'],
+      'My best work mixes frontend judgment with backend reality: auth, persistence, real-time collaboration, APIs, payments, and model-powered workflows that fit the product instead of hijacking it.',
+    points: ['Next.js + TypeScript', 'Real-time + data flows', 'Model integrations that serve the UX'],
     variant: 'network',
   },
   {
-    eyebrow: 'Visible Proof',
-    title: 'Claims only matter when the work is inspectable.',
+    eyebrow: 'Proof Standard',
+    title: 'The signal should be public, inspectable, and hard to fake.',
     copy:
-      'That means live products, merged OSS commits, tests, and straightforward links to what actually shipped. The story should feel premium. The proof should feel concrete.',
-    points: ['Live deployments', 'Merged commits', 'Audit-friendly links'],
+      'That is why the portfolio leans on shipped apps, merged OSS work, tests, and direct links. I want the work to answer the claim without needing extra spin.',
+    points: ['Live products', 'Merged OSS commits', 'Code you can inspect'],
     variant: 'proof',
   },
 ]
+
+const heroHighlights = ['Open to 2026 internships', 'Based in Alberta', 'Product engineering + practical AI']
+
+const heroDetails = [
+  {
+    label: 'Looking for',
+    value: 'Software engineering and AI product engineering internships',
+  },
+  {
+    label: 'Best at',
+    value: 'Turning product ideas into full-stack systems with visible proof',
+  },
+  {
+    label: 'Works with',
+    value: 'Next.js, TypeScript, APIs, real-time flows, and model-backed features',
+  },
+]
+
+const profilePrinciples = [
+  'Make the interface clear before making it clever.',
+  'Use AI where it improves product behavior, not where it only adds spectacle.',
+  'Prefer proof that is inspectable: shipped apps, merged commits, tests, and source.',
+]
+
+const profileSignals = [
+  {
+    label: 'Current target',
+    value: 'Intern roles where product judgment and engineering standards both matter',
+  },
+  {
+    label: 'Strongest environments',
+    value: 'Teams shipping real software with review culture, iteration speed, and high ownership',
+  },
+  {
+    label: 'Working base',
+    value: 'Alberta, Canada / remote-friendly',
+  },
+]
+
+const profileFocus = ['Product-minded builder', 'Open-source contributor', 'Real-time systems', 'Model-powered features']
 
 const featuredProjects = projects.filter((project) => project.featured).slice(0, 3)
 const recentExperience = experiences.slice(0, 3)
@@ -129,20 +169,25 @@ export default function Home() {
         <div className="hero__aurora hero__aurora--right" aria-hidden="true" />
 
         <div className="hero__content">
-          <p className="eyebrow eyebrow--center">Software engineer / full-stack systems / practical AI</p>
+          <p className="eyebrow eyebrow--center">Felmon Fekadu / software engineer / full-stack systems</p>
 
-          <h1 className="hero__title" aria-label="A portfolio for the teams you're building.">
-            <span>A portfolio </span>
-            <span>for the teams </span>
-            <span>you&apos;re building.</span>
+          <h1 className="hero__title" aria-label="Felmon Fekadu. Full-stack engineer for real products.">
+            <span>Felmon Fekadu.</span>
+            <span>Full-stack engineer</span>
+            <span>for real products.</span>
           </h1>
 
           <p className="hero__summary">
-            I build products that feel composed on the surface and rigorous underneath: model-aware
-            interfaces, real-time systems, and public work with proof you can inspect.
+            I build model-aware interfaces, real-time systems, and full-stack product workflows
+            that stay readable under real use. The strongest signal is public: projects, merged
+            OSS work, tests, and shipped product behavior.
           </p>
 
           <div className="hero__actions">
+            <a href="#profile" className="button button--ghost">
+              Read profile
+              <ArrowRight size={16} />
+            </a>
             <a href="#work" className="button button--primary">
               View selected work
               <ArrowRight size={16} />
@@ -153,20 +198,37 @@ export default function Home() {
             </a>
           </div>
 
+          <div className="hero__meta" aria-label="Profile highlights">
+            {heroHighlights.map((item) => (
+              <span key={item} className="hero-meta-pill">
+                {item}
+              </span>
+            ))}
+          </div>
+
           <div className="hero__stage" aria-hidden="true">
             <div className="hero-panel">
               <div className="hero-panel__top">
-                <span className="hero-panel__pill">current focus</span>
+                <span className="hero-panel__pill">profile</span>
                 <span className="hero-panel__pill hero-panel__pill--muted">2026</span>
               </div>
 
               <div className="hero-panel__body">
-                <p className="hero-panel__eyebrow">orientation</p>
-                <h2 className="hero-panel__title">Quiet on the surface. Rigorous underneath.</h2>
+                <p className="hero-panel__eyebrow">current direction</p>
+                <h2 className="hero-panel__title">Practical AI. Real systems. Public proof.</h2>
                 <p className="hero-panel__copy">
-                  Product taste, maintainable code, model integration, and shipped proof should
-                  reinforce each other instead of competing for attention.
+                  I&apos;m most useful on products where interface clarity, implementation depth,
+                  and shipping discipline are all part of the same job.
                 </p>
+              </div>
+
+              <div className="hero-panel__details">
+                {heroDetails.map((item) => (
+                  <article key={item.label} className="hero-detail">
+                    <span>{item.label}</span>
+                    <strong>{item.value}</strong>
+                  </article>
+                ))}
               </div>
 
               <div className="hero-panel__metrics">
@@ -182,13 +244,91 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="profile" className="profile">
+        <div className="section-heading">
+          <p className="eyebrow">Profile</p>
+          <h2 className="section-heading__title">The profile behind the repositories.</h2>
+          <p className="section-heading__copy">
+            This should answer the first practical questions quickly: what I build, how I work,
+            and the kinds of teams where I&apos;m most useful.
+          </p>
+        </div>
+
+        <div className="profile-grid">
+          <article className="profile-panel profile-panel--intro">
+            <p className="eyebrow">Short version</p>
+            <h3 className="profile-panel__title">
+              I care about products that survive real use, not just polished demos.
+            </h3>
+            <p className="profile-panel__copy">
+              The through-line in my work is straightforward: make the product feel clear, make
+              the system hold up, and make the proof easy to inspect. That is true whether the
+              feature is a real-time editor, a paid assessment flow, or an LLM-backed workflow.
+            </p>
+
+            <div className="profile-panel__chips">
+              {profileFocus.map((item) => (
+                <span key={item} className="tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </article>
+
+          <div className="profile-stack">
+            <article className="profile-panel">
+              <p className="eyebrow">Operating principles</p>
+              <ul className="profile-list">
+                {profilePrinciples.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="profile-panel">
+              <p className="eyebrow">Where I fit best</p>
+              <div className="profile-signals">
+                {profileSignals.map((item) => (
+                  <article key={item.label} className="profile-signal">
+                    <span>{item.label}</span>
+                    <strong>{item.value}</strong>
+                  </article>
+                ))}
+              </div>
+
+              <div className="profile-links">
+                {socialLinks.map((item) => {
+                  const Icon = socialIconMap[item.icon] ?? Mail
+                  const isExternal = item.url.startsWith('http')
+
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      className="contact-link"
+                    >
+                      <Icon size={16} />
+                      {item.name}
+                    </a>
+                  )
+                })}
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="story" className="chapters">
         <div className="section-heading">
-          <p className="eyebrow">Story</p>
-          <h2 className="section-heading__title">Closer to a product story, further from a resume grid.</h2>
+          <p className="eyebrow">Working Style</p>
+          <h2 className="section-heading__title">
+            How I work, what I build, and what counts as proof.
+          </h2>
           <p className="section-heading__copy">
-            The goal is not to copy Thine verbatim. It is to borrow the discipline: stronger
-            pacing, fewer objects, better hierarchy, and motion that feels intentional.
+            The goal is to make the engineering profile legible before you open a single repo:
+            working style, technical range, and evidence standards.
           </p>
         </div>
 
@@ -364,7 +504,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <p>Felmon Fekadu</p>
-        <p>Next.js portfolio / redesigned toward a calmer product narrative</p>
+        <p>Profile-first portfolio / Next.js / product engineering focus</p>
       </footer>
     </main>
   )
