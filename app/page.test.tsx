@@ -8,25 +8,25 @@ describe('Home page', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /A product engineer/i,
+        name: /A portfolio for the teams you're building/i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /A portfolio that moves like a product story/i,
+        name: /Closer to a product story, further from a resume grid/i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /Proof that holds up when you inspect it/i,
+        name: /Proof that still reads cleanly/i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /Let's build something with a real standard/i,
+        name: /For the teams you're headed toward/i,
       })
     ).toBeInTheDocument()
   })
