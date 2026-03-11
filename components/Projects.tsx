@@ -18,8 +18,8 @@ export default function Projects() {
 
           <div className="section-main">
             <p className="section-lede reveal-up">
-              The strongest signal is work that can be inspected. These projects show product range,
-              implementation depth, and a track record of shipping fixes in public codebases.
+              The strongest signal is work that can be inspected. This section leads with shipped
+              products, then separates accepted upstream work from submitted PRs.
             </p>
 
             <div className="project-stack reveal-up delay-1">
@@ -69,25 +69,26 @@ export default function Projects() {
 
             <div className="subsection-block reveal-up delay-2">
               <div>
-                <p className="section-kicker">Merged Contributions</p>
+                <p className="section-kicker">Accepted + Submitted Upstream Work</p>
                 <p className="section-lede">
-                  Direct commit links for the open-source work included on my resume and in my
-                  applications.
+                  The accepted PR and the submitted upstream work are labeled separately so the
+                  public proof stays precise.
                 </p>
               </div>
 
               <div className="proof-list">
                 {proofOfWork.map((item) => (
                   <article key={item.url} className="proof-item">
-                    <p className="project-category">Commit</p>
+                    <p className="project-category">{item.kind}</p>
                     <h3 className="skill-title">{item.label}</h3>
+                    <p className="muted">{item.status}</p>
                     <a
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="proof-link"
                     >
-                      Open Commit
+                      {item.cta}
                       <ExternalLink size={16} />
                     </a>
                   </article>

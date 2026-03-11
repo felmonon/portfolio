@@ -18,7 +18,7 @@ export default function Hero() {
             <h1 className="hero-title">Felmon Fekadu</h1>
             <p className="hero-summary">
               Computer Science student building product-grade software, real-time tools, and AI
-              features with live demos, merged open-source work, and a bias toward proof over
+              features with live demos, accepted upstream work, and a bias toward proof over
               inflated claims.
             </p>
 
@@ -65,7 +65,7 @@ export default function Hero() {
           <aside className="hero-rail reveal-up delay-1">
             <div className="rail-panel">
               <p className="section-kicker">Current Focus</p>
-              <h2 className="rail-title">Internships where engineering quality is visible in the work.</h2>
+              <h2 className="rail-title">Full-time roles where engineering quality is visible in the work.</h2>
               <p className="rail-copy">
                 Looking for teams that ship real software, care about review quality, and expect
                 product thinking from engineers.

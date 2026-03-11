@@ -39,8 +39,8 @@ export default function About() {
                 editor, and upstream fixes across TypeScript and Rust open-source projects.
               </p>
               <p className="body-copy">
-                I am looking for internship work where I can contribute quickly, absorb feedback
-                from stronger engineers, and keep raising the quality bar on what I ship.
+                I am looking for full-time engineering work where I can contribute quickly, absorb
+                feedback from strong teams, and keep raising the quality bar on what I ship.
               </p>
             </div>
 

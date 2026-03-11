@@ -45,7 +45,7 @@ export default function Contact() {
 
           <div className="section-main">
             <p className="section-lede reveal-up">
-              I am looking for software engineering and product-focused internship work where I can
+              I am looking for full-time software engineering and product-focused roles where I can
               contribute quickly, learn from strong review culture, and keep shipping visible
               progress.
             </p>

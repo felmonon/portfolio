@@ -35,24 +35,24 @@ const chapters = [
   },
   {
     eyebrow: 'Proof Standard',
-    title: 'The signal should be public, inspectable, and hard to fake.',
+    title: 'Lead with shipped products. State upstream work exactly.',
     copy:
-      'That is why the portfolio leans on shipped apps, merged OSS work, tests, and direct links. I want the work to answer the claim without needing extra spin.',
-    points: ['Live products', 'Merged OSS commits', 'Code you can inspect'],
+      'The standard is simple: public products that run, accepted upstream work where it exists, and submitted PRs labeled exactly as they are. The proof should not need spin.',
+    points: ['Live products', 'Accepted upstream PR', 'Code you can inspect'],
     variant: 'proof',
   },
 ]
 
-const heroHighlights = ['Open to 2026 internships', 'Based in Alberta', 'Product engineering + practical AI']
+const heroHighlights = ['Open to full-time roles', 'Based in Alberta', 'Product engineering + practical AI']
 
 const heroDetails = [
   {
     label: 'Looking for',
-    value: 'Software engineering and AI product engineering internships',
+    value: 'Full-time software engineering, full-stack, and AI product engineering roles',
   },
   {
-    label: 'Best at',
-    value: 'Turning product ideas into full-stack systems with visible proof',
+    label: 'Strongest proof',
+    value: 'TypeJung: a live full-stack assessment product with payments, auth, and AI-generated reports',
   },
   {
     label: 'Works with',
@@ -63,13 +63,13 @@ const heroDetails = [
 const profilePrinciples = [
   'Make the interface clear before making it clever.',
   'Use AI where it improves product behavior, not where it only adds spectacle.',
-  'Prefer proof that is inspectable: shipped apps, merged commits, tests, and source.',
+  'Prefer proof that is inspectable: live products, accepted work, clearly labeled PRs, and source.',
 ]
 
 const profileSignals = [
   {
     label: 'Current target',
-    value: 'Intern roles where product judgment and engineering standards both matter',
+    value: 'Full-time roles where product judgment and engineering standards both matter',
   },
   {
     label: 'Strongest environments',
@@ -81,7 +81,7 @@ const profileSignals = [
   },
 ]
 
-const profileFocus = ['Product-minded builder', 'Open-source contributor', 'Real-time systems', 'Model-powered features']
+const profileFocus = ['Product-minded builder', 'Shipped products', 'Real-time systems', 'Model-powered features']
 
 const featuredProjects = projects.filter((project) => project.featured).slice(0, 3)
 const recentExperience = experiences.slice(0, 3)
@@ -125,16 +125,16 @@ function ChapterStage({ variant }: { variant: string }) {
   return (
     <div className="chapter-stage chapter-stage--proof" aria-hidden="true">
       <div className="proof-card proof-card--lead">
-        <span className="proof-card__label">merged</span>
-        <strong>LangChain.js validation + tests</strong>
+        <span className="proof-card__label">flagship</span>
+        <strong>TypeJung live product</strong>
       </div>
       <div className="proof-card">
         <span className="proof-card__label">shipped</span>
-        <strong>Real-time editor with sync and persistence</strong>
+        <strong>Collab Editor with sync and persistence</strong>
       </div>
       <div className="proof-card">
-        <span className="proof-card__label">live</span>
-        <strong>AI assessment platform with payments</strong>
+        <span className="proof-card__label">merged</span>
+        <strong>commaai/opendbc upstream PR</strong>
       </div>
     </div>
   )
@@ -179,8 +179,8 @@ export default function Home() {
 
           <p className="hero__summary">
             I build model-aware interfaces, real-time systems, and full-stack product workflows
-            that stay readable under real use. The strongest signal is public: projects, merged
-            OSS work, tests, and shipped product behavior.
+            that stay readable under real use. The strongest public proof is shipped product work
+            first, then accepted upstream OSS where it exists, with submitted PRs stated plainly.
           </p>
 
           <div className="hero__actions">
@@ -357,10 +357,10 @@ export default function Home() {
       <section id="work" className="showcase">
         <div className="section-heading">
           <p className="eyebrow">Selected Work</p>
-          <h2 className="section-heading__title">Proof that still reads cleanly.</h2>
+          <h2 className="section-heading__title">Start with the strongest shipped work.</h2>
           <p className="section-heading__copy">
-            These projects are the strongest public signals in the portfolio: product range,
-            implementation depth, and links that point to something real.
+            The portfolio leads with the best public product proof first, then separates accepted
+            upstream work from submitted PRs so the signal stays clean.
           </p>
         </div>
 
@@ -400,7 +400,7 @@ export default function Home() {
                       className="button button--primary"
                     >
                       <ExternalLink size={16} />
-                      {index === 0 ? 'Live product' : 'Open'}
+                      {index === 0 ? 'Live product' : 'Open live app'}
                     </a>
                   </div>
                 </div>
@@ -418,7 +418,7 @@ export default function Home() {
         <div className="proof__intro">
           <div className="section-heading section-heading--tight">
             <p className="eyebrow">Proof</p>
-            <h2 className="section-heading__title">Public commits, shipped work, and visible range.</h2>
+            <h2 className="section-heading__title">Live products first. Upstream work stated honestly.</h2>
           </div>
 
           <div className="proof__stats">
@@ -436,12 +436,13 @@ export default function Home() {
             {proofOfWork.map((item) => (
               <article key={item.url} className="proof-line">
                 <div>
-                  <p className="eyebrow">Merged contribution</p>
+                  <p className="eyebrow">{item.kind}</p>
                   <h3>{item.label}</h3>
+                  <p className="timeline-item__meta">{item.status}</p>
                 </div>
 
                 <a href={item.url} target="_blank" rel="noopener noreferrer" className="proof-line__link">
-                  Open commit
+                  {item.cta}
                   <ExternalLink size={16} />
                 </a>
               </article>
@@ -469,7 +470,7 @@ export default function Home() {
           <h2 className="contact__title">For the teams you&apos;re headed toward.</h2>
           <p className="contact__copy">
             I&apos;m looking for environments where product judgment and engineering standards both
-            matter. If that&apos;s the bar, send me the problem.
+            matter in full-time engineering work. If that&apos;s the bar, send me the problem.
           </p>
 
           <div className="contact__actions">

@@ -7,9 +7,6 @@ describe('Projects', () => {
     render(<Projects />)
 
     const liveLink = screen.getByRole('link', { name: /live project/i })
-    expect(liveLink).toHaveAttribute(
-      'href',
-      'https://jungian-typology-assessment.vercel.app/'
-    )
+    expect(liveLink).toHaveAttribute('href', 'https://typejung.com')
   })
 })

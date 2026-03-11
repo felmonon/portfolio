@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     'Narrative portfolio for Felmon Fekadu, focused on model-powered products, full-stack systems, and public engineering proof.',
   keywords: [
-    'Software Engineering Intern',
-    'AI Internship',
+    'Software Engineer',
+    'AI Product Engineer',
     'TypeScript',
     'Next.js',
     'React',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Felmon Fekadu | Product Engineering Portfolio',
     description:
-      'A narrative portfolio featuring full-stack applications, model-powered product work, and merged open-source contributions.',
+      'A narrative portfolio featuring full-stack applications, model-powered product work, and public engineering proof.',
     type: 'website',
     url: 'https://felmonfekadu.com',
   },

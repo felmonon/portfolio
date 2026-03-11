@@ -26,7 +26,7 @@ describe('Home page', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /Proof that still reads cleanly/i,
+        name: /Start with the strongest shipped work/i,
       })
     ).toBeInTheDocument()
 
