@@ -43,12 +43,12 @@ const chapters = [
   },
 ]
 
-const heroHighlights = ['Open to full-time roles', 'Based in Alberta', 'Product engineering + practical AI']
+const heroHighlights = ['Open to full-time roles', 'Based in Alberta', 'Product development + practical AI']
 
 const heroDetails = [
   {
     label: 'Looking for',
-    value: 'Full-time software engineering, full-stack, and AI product engineering roles',
+    value: 'Full-time software developer, full-stack, and AI product roles',
   },
   {
     label: 'Strongest proof',
@@ -56,7 +56,7 @@ const heroDetails = [
   },
   {
     label: 'Works with',
-    value: 'Next.js, TypeScript, APIs, real-time flows, and model-backed features',
+    value: 'Next.js, TypeScript, FastAPI, real-time flows, and model-backed features',
   },
 ]
 
@@ -69,7 +69,7 @@ const profilePrinciples = [
 const profileSignals = [
   {
     label: 'Current target',
-    value: 'Full-time roles where product judgment and engineering standards both matter',
+    value: 'Full-time roles where product judgment and software quality both matter',
   },
   {
     label: 'Strongest environments',
@@ -147,7 +147,7 @@ export default function Home() {
         <div className="site-nav__inner">
           <a href="#top" className="site-brand">
             <span className="site-brand__name">Felmon Fekadu</span>
-            <span className="site-brand__meta">Product engineering portfolio</span>
+            <span className="site-brand__meta">Product development portfolio</span>
           </a>
 
           <nav className="site-nav__links" aria-label="Primary">
@@ -169,11 +169,11 @@ export default function Home() {
         <div className="hero__aurora hero__aurora--right" aria-hidden="true" />
 
         <div className="hero__content">
-          <p className="eyebrow eyebrow--center">Felmon Fekadu / software engineer / full-stack systems</p>
+          <p className="eyebrow eyebrow--center">Felmon Fekadu / software developer / full-stack systems</p>
 
-          <h1 className="hero__title" aria-label="Felmon Fekadu. Full-stack engineer for real products.">
+          <h1 className="hero__title" aria-label="Felmon Fekadu. Full-stack developer for real products.">
             <span>Felmon Fekadu.</span>
-            <span>Full-stack engineer</span>
+            <span>Full-stack developer</span>
             <span>for real products.</span>
           </h1>
 
@@ -327,7 +327,7 @@ export default function Home() {
             How I work, what I build, and what counts as proof.
           </h2>
           <p className="section-heading__copy">
-            The goal is to make the engineering profile legible before you open a single repo:
+            The goal is to make the developer profile legible before you open a single repo:
             working style, technical range, and evidence standards.
           </p>
         </div>
@@ -469,8 +469,8 @@ export default function Home() {
           <p className="eyebrow eyebrow--center">Contact</p>
           <h2 className="contact__title">For the teams you&apos;re headed toward.</h2>
           <p className="contact__copy">
-            I&apos;m looking for environments where product judgment and engineering standards both
-            matter in full-time engineering work. If that&apos;s the bar, send me the problem.
+            I&apos;m looking for environments where product judgment and software quality both
+            matter in full-time product and developer work. If that&apos;s the bar, send me the problem.
           </p>
 
           <div className="contact__actions">
@@ -505,7 +505,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <p>Felmon Fekadu</p>
-        <p>Profile-first portfolio / Next.js / product engineering focus</p>
+        <p>Profile-first portfolio / Next.js / product development focus</p>
       </footer>
     </main>
   )

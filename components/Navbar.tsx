@@ -21,7 +21,7 @@ export default function Navbar() {
         <div className="site-nav__inner">
           <a href="#home" className="nav-brand" onClick={() => setIsOpen(false)}>
             <span className="nav-brand__name">Felmon Fekadu</span>
-            <span className="nav-brand__meta">software engineer / calgary / 2026</span>
+            <span className="nav-brand__meta">software developer / calgary / 2026</span>
           </a>
 
           <nav className="nav-links hidden md:flex" aria-label="Primary">

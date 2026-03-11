@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Felmon Fekadu | Product Engineering Portfolio',
+  title: 'Felmon Fekadu | Software Developer Portfolio',
   description:
-    'Narrative portfolio for Felmon Fekadu, focused on model-powered products, full-stack systems, and public engineering proof.',
+    'Narrative portfolio for Felmon Fekadu, focused on shipped products, full-stack systems, Prime Lab experiments, and public proof.',
   keywords: [
-    'Software Engineer',
-    'AI Product Engineer',
+    'Software Developer',
+    'AI Product Developer',
     'TypeScript',
     'Next.js',
     'React',
@@ -18,17 +18,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Felmon Fekadu' }],
   openGraph: {
-    title: 'Felmon Fekadu | Product Engineering Portfolio',
+    title: 'Felmon Fekadu | Software Developer Portfolio',
     description:
-      'A narrative portfolio featuring full-stack applications, model-powered product work, and public engineering proof.',
+      'A narrative portfolio featuring shipped products, model-powered development work, and public proof.',
     type: 'website',
     url: 'https://felmonfekadu.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Felmon Fekadu | Product Engineer',
+    title: 'Felmon Fekadu | Software Developer',
     description:
-      'Product engineering portfolio with full-stack projects, model-aware systems, and OSS contributions.',
+      'Software developer portfolio with shipped products, full-stack systems, and OSS contributions.',
   },
 }
 

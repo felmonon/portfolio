@@ -10,8 +10,8 @@ export const navLinks = [
 ]
 
 export const roles = [
-  'AI Product Engineer',
-  'Software Engineer',
+  'AI Product Developer',
+  'Software Developer',
   'LLM Integration Builder',
   'Shipped Product Builder',
 ]
@@ -52,6 +52,7 @@ export const resumeLinks = [
 export const aboutHighlights = [
   'Full-Stack Web Development',
   'Model-Powered Product Development',
+  'Prime Lab / Verifiers',
   'Accepted & Submitted OSS Work',
   'Real-Time Systems',
   'Testing & CI/CD',
@@ -70,6 +71,8 @@ export const skills = [
       'Node.js',
       'Express',
       'FastAPI',
+      'LangGraph',
+      'Verifiers',
       'PostgreSQL',
       'Supabase',
       'Prisma',
@@ -166,6 +169,30 @@ export const projects = [
 
 export const experiences = [
   {
+    title: 'Independent Product Builder',
+    company: 'Self-directed product work',
+    location: 'Remote',
+    period: '2025 - Present',
+    description: [
+      'Built and shipped TypeJung and Collab Editor across frontend, backend, auth, billing, and deployment workflows.',
+      'Worked across product UX, persistence, APIs, real-time collaboration, and production polish instead of isolated feature tasks.',
+      'Use public products as the main proof surface, with resume and portfolio claims kept narrower than the code supports.',
+    ],
+    tech: ['TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Real-Time Systems'],
+  },
+  {
+    title: 'AI Research Systems Builder',
+    company: 'Prime Lab + local R&D',
+    location: 'Remote',
+    period: '2025',
+    description: [
+      'Built a FastAPI and LangGraph backend MVP for multi-agent research workflows, plus a custom Prime Lab / Verifiers environment for self-improvement experiments.',
+      'Implemented streaming research updates, claim analysis scaffolding, and environment configs for evaluation and RL-style training loops.',
+      'Kept the public description precise: backend MVP and lab environment work, not a shipped production platform.',
+    ],
+    tech: ['Python', 'FastAPI', 'LangGraph', 'Verifiers', 'Prime Lab'],
+  },
+  {
     title: 'Open-Source PR Author',
     company: 'commaai/opendbc + selected upstream repos',
     location: 'Remote',
@@ -176,41 +203,6 @@ export const experiences = [
       'Built test-backed changes, UI behavior fixes, and systems features while adapting to maintainer feedback.',
     ],
     tech: ['TypeScript', 'Rust', 'Testing', 'Open Source'],
-  },
-  {
-    title: 'Safety Watch / Fire Watch',
-    company: 'United Safety',
-    location: 'Fort McMurray / Northern Alberta',
-    period: '2022 - 2024',
-    description: [
-      'Monitored high-risk operations and executed emergency response procedures at industrial sites.',
-      'Tracked atmospheric readings and maintained compliance and incident logs.',
-      'Coordinated with operations and technical teams in rotational camp environments.',
-    ],
-    tech: ['Safety Operations', 'Incident Logging', 'Team Coordination'],
-  },
-  {
-    title: 'Mobile Security Patrol Officer',
-    company: 'Security Services',
-    location: 'Calgary, AB',
-    period: '2020 - 2022',
-    description: [
-      'Conducted facility patrols and documented incidents using digital reporting systems.',
-      'Responded to alarms and coordinated with dispatch and emergency services.',
-    ],
-    tech: ['Operations', 'Reporting', 'Response Procedures'],
-  },
-  {
-    title: 'B.S. Computer Science Student',
-    company: 'University of the People',
-    location: 'Online',
-    period: 'Expected 2026',
-    description: [
-      'Focused on software engineering, algorithms, systems, and full-stack development.',
-      'Built portfolio projects spanning real-time systems, API design, and AI integrations.',
-      'Named to the UoPeople Honors List for Term 2, 2025-2026.',
-    ],
-    tech: ['Computer Science', 'Software Engineering', 'Project-Based Learning'],
   },
 ]
 

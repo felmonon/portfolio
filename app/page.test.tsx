@@ -8,9 +8,11 @@ describe('Home page', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /Felmon Fekadu\. Full-stack engineer for real products\./i,
+        name: /Felmon Fekadu\. Full-stack developer for real products\./i,
       })
     ).toBeInTheDocument()
+
+    expect(screen.getByRole('heading', { name: /AI Research Systems Builder/i })).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
