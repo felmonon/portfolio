@@ -14,11 +14,11 @@ export default function Hero() {
       <div className="container-shell">
         <div className="hero-grid">
           <div className="hero-main reveal-up">
-            <p className="section-kicker">Software developer / full-stack systems / practical AI</p>
+            <p className="section-kicker">Software engineer / full-stack systems / practical AI</p>
             <h1 className="hero-title">Felmon Fekadu</h1>
             <p className="hero-summary">
-              Software developer building product-grade software, real-time tools, and AI features
-              with live demos, accurate public proof, and a bias toward inspectable work over
+              Computer Science student building product-grade software, real-time tools, and AI
+              features with live demos, accepted upstream work, and a bias toward proof over
               inflated claims.
             </p>
 
@@ -27,7 +27,7 @@ export default function Hero() {
                 View Selected Work
                 <ArrowRight size={16} />
               </a>
-              <a href="/resume.pdf" className="button-secondary" download>
+              <a href={resumeLinks[0]?.url} className="button-secondary" download>
                 Download Resume
                 <Download size={16} />
               </a>
@@ -65,10 +65,10 @@ export default function Hero() {
           <aside className="hero-rail reveal-up delay-1">
             <div className="rail-panel">
               <p className="section-kicker">Current Focus</p>
-              <h2 className="rail-title">Full-time roles where software quality is visible in the work.</h2>
+              <h2 className="rail-title">Full-time roles where engineering quality is visible in the work.</h2>
               <p className="rail-copy">
                 Looking for teams that ship real software, care about review quality, and expect
-                product thinking from developers.
+                product thinking from engineers.
               </p>
             </div>
 

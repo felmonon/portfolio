@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { navLinks } from '@/lib/data'
+import { navLinks, resumeLinks } from '@/lib/data'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,7 +21,7 @@ export default function Navbar() {
         <div className="site-nav__inner">
           <a href="#home" className="nav-brand" onClick={() => setIsOpen(false)}>
             <span className="nav-brand__name">Felmon Fekadu</span>
-            <span className="nav-brand__meta">software developer / calgary / 2026</span>
+            <span className="nav-brand__meta">software engineer / calgary / 2026</span>
           </a>
 
           <nav className="nav-links hidden md:flex" aria-label="Primary">
@@ -33,7 +33,7 @@ export default function Navbar() {
           </nav>
 
           <div className="nav-actions hidden md:flex">
-            <a href="/resume.pdf" className="button-secondary" download>
+            <a href={resumeLinks[0]?.url} className="button-secondary" download>
               Resume
             </a>
             <a href="#contact" className="button-primary">
@@ -70,7 +70,7 @@ export default function Navbar() {
             </nav>
 
             <div className="mobile-panel__actions">
-              <a href="/resume.pdf" className="button-secondary" download>
+              <a href={resumeLinks[0]?.url} className="button-secondary" download>
                 Resume
               </a>
               <a href="#contact" className="button-primary" onClick={() => setIsOpen(false)}>

@@ -23,7 +23,7 @@ export default function About() {
           <div className="section-side reveal-up">
             <p className="section-index">01</p>
             <p className="section-kicker">About</p>
-            <h2 className="section-heading">Development with less theater.</h2>
+            <h2 className="section-heading">Engineering with less theater.</h2>
           </div>
 
           <div className="section-main">
@@ -36,11 +36,11 @@ export default function About() {
             <div className="body-grid reveal-up delay-1">
               <p className="body-copy">
                 Recent work includes an AI-assisted assessment platform, a real-time collaborative
-                editor, Prime Lab experiments, and upstream fixes across TypeScript and Rust codebases.
+                editor, and upstream fixes across TypeScript and Rust open-source projects.
               </p>
               <p className="body-copy">
-                I am looking for full-time software developer work where I can contribute quickly,
-                absorb feedback from strong teams, and keep raising the quality bar on what I ship.
+                I am looking for full-time engineering work where I can contribute quickly, absorb
+                feedback from strong teams, and keep raising the quality bar on what I ship.
               </p>
             </div>
 

@@ -3,38 +3,48 @@ import { render, screen } from '@testing-library/react'
 import Home from '@/app/page'
 
 describe('Home page', () => {
-  it('renders the main narrative sections', () => {
+  it('renders the main engineering portfolio sections', () => {
     render(<Home />)
 
     expect(
       screen.getByRole('heading', {
-        name: /Felmon Fekadu\. Full-stack developer for real products\./i,
-      })
-    ).toBeInTheDocument()
-
-    expect(screen.getByRole('heading', { name: /AI Research Systems Builder/i })).toBeInTheDocument()
-
-    expect(
-      screen.getByRole('heading', {
-        name: /The profile behind the repositories/i,
+        name: /I build products that are useful, fast, and real/i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /How I work, what I build, and what counts as proof/i,
+        name: /Building systems that solve real problems/i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /Start with the strongest shipped work/i,
+        name: /^Case studies$/i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /For the teams you're headed toward/i,
+        name: /Engineering decisions, not just polished screens/i,
+      })
+    ).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', {
+        name: /Experience & milestones/i,
+      })
+    ).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', {
+        name: /Body of work/i,
+      })
+    ).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', {
+        name: /Looking for an engineer who can build, learn fast, and own outcomes/i,
       })
     ).toBeInTheDocument()
   })

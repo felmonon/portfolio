@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { CustomCursor } from '@/components/ui/CustomCursor'
 
 export const metadata: Metadata = {
-  title: 'Felmon Fekadu | Product Engineering Portfolio',
+  title: 'Felmon Fekadu | Engineering Portfolio',
   description:
-    'Narrative portfolio for Felmon Fekadu, focused on model-powered products, full-stack systems, and public engineering proof.',
+    'Desktop-first engineering portfolio for Felmon Fekadu, featuring full-stack products, real-time systems, and public proof of work.',
   keywords: [
     'Software Engineer',
     'AI Product Engineer',
@@ -15,21 +14,22 @@ export const metadata: Metadata = {
     'Node.js',
     'PostgreSQL',
     'Open Source',
+    'Engineering Portfolio',
     'Felmon Fekadu',
   ],
   authors: [{ name: 'Felmon Fekadu' }],
   openGraph: {
-    title: 'Felmon Fekadu | Product Engineering Portfolio',
+    title: 'Felmon Fekadu | Engineering Portfolio',
     description:
-      'A narrative portfolio featuring full-stack applications, model-powered product work, and public engineering proof.',
+      'A desktop-first engineering portfolio featuring full-stack applications, systems work, and public proof.',
     type: 'website',
     url: 'https://felmonfekadu.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Felmon Fekadu | Product Engineer',
+    title: 'Felmon Fekadu | Engineering Portfolio',
     description:
-      'Product engineering portfolio with full-stack projects, model-aware systems, and OSS contributions.',
+      'Engineering portfolio with full-stack projects, real-time systems, and OSS contributions.',
   },
 }
 
@@ -40,10 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased">
-        <CustomCursor />
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }

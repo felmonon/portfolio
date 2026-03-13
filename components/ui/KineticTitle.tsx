@@ -5,12 +5,14 @@ import { motion } from 'framer-motion'
 export function KineticTitle({
   lines,
   className = 'hero__title',
+  ariaLabel,
 }: {
   lines: string[]
   className?: string
+  ariaLabel?: string
 }) {
   return (
-    <h1 className={className}>
+    <h1 className={className} aria-label={ariaLabel ?? lines.join(' ')}>
       {lines.map((line, li) => (
         <span key={li} className="k-line">
           {line.split('').map((ch, ci) => (

@@ -10,8 +10,8 @@ export const navLinks = [
 ]
 
 export const roles = [
-  'AI Product Developer',
-  'Software Developer',
+  'AI Product Engineer',
+  'Software Engineer',
   'LLM Integration Builder',
   'Shipped Product Builder',
 ]
@@ -19,7 +19,7 @@ export const roles = [
 export const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/FELMONON',
+    url: 'https://github.com/FelmonFekadu',
     icon: 'github',
   },
   {
@@ -52,7 +52,6 @@ export const resumeLinks = [
 export const aboutHighlights = [
   'Full-Stack Web Development',
   'Model-Powered Product Development',
-  'Prime Lab / Verifiers',
   'Accepted & Submitted OSS Work',
   'Real-Time Systems',
   'Testing & CI/CD',
@@ -71,8 +70,6 @@ export const skills = [
       'Node.js',
       'Express',
       'FastAPI',
-      'LangGraph',
-      'Verifiers',
       'PostgreSQL',
       'Supabase',
       'Prisma',
@@ -90,28 +87,73 @@ export const skills = [
 export const projects = [
   {
     title: 'TypeJung',
+    tagline: 'Live full-stack assessment product with paid tiers and AI-generated reports.',
     description:
       'Live full-stack assessment product with a 40-question engine, AI-generated insights, authentication, and Stripe-based tiered monetization.',
     tech: ['React', 'TypeScript', 'Express', 'Supabase', 'Stripe', 'Gemini'],
     category: 'Flagship Product',
     image: '/images/project-jungian.png',
-    github: 'https://github.com/FELMONON/jungian-typology-assessment',
+    github: 'https://github.com/FelmonFekadu/jungian-typology-assessment',
     live: 'https://typejung.com',
     featured: true,
+    caseStudy: true,
+    problem:
+      'A personality assessment can get attention, but turning it into a product requires more than questions. It needs authentication, payments, report generation, and a flow that makes the value obvious.',
+    solution:
+      'Built a complete assessment product with a multi-step questionnaire, gated reports, account handling, and AI-generated insights that sit inside a paid product flow instead of a demo.',
+    architecture:
+      'React and TypeScript on the frontend, Express on the backend, Supabase for auth and persistence, Stripe for billing, and Gemini-powered report generation.',
+    constraints:
+      'The system had to keep the experience readable while handling monetization, report generation, and account state without making the product feel fragile.',
+    outcome:
+      'Shipped publicly at typejung.com with tiered monetization, public source code, and inspectable product behavior.',
+    imageGradient: 'linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%)',
+    ctaLabel: 'Open live product',
+    secondaryHref: 'https://github.com/FelmonFekadu/jungian-typology-assessment',
+    secondaryLabel: 'Inspect source',
+    proofItems: [
+      'Live product at typejung.com',
+      '40-question assessment engine',
+      'Supabase auth, persistence, and Stripe billing',
+      'Gemini-generated reports inside paid product flow',
+    ],
   },
   {
     title: 'Collab Editor',
+    tagline: 'Real-time collaborative editing with sync, autosave, and persistence.',
     description:
       'Real-time collaborative editor built with Next.js, Tiptap, and Socket.io with live sync, autosave, and PostgreSQL persistence.',
     tech: ['Next.js', 'TypeScript', 'Socket.io', 'Tiptap', 'PostgreSQL', 'Prisma'],
     category: 'Real-Time Web App',
     image: '/images/project-collab.png',
-    github: 'https://github.com/FELMONON/collab-editor',
+    github: 'https://github.com/FelmonFekadu/collab-editor',
     live: 'https://collab-editor-sand.vercel.app',
     featured: true,
+    caseStudy: true,
+    problem:
+      'Collaborative editing looks simple at the surface, but the real work is keeping shared state, autosave, and persistence coherent when multiple users are editing at once.',
+    solution:
+      'Built a collaborative document editor with live synchronization, rich-text editing, autosave behavior, and a persistent backend instead of a local-only prototype.',
+    architecture:
+      'Next.js and TypeScript on the client, Tiptap for editing, Socket.io for sync, PostgreSQL for persistence, and Prisma for data access.',
+    constraints:
+      'The main challenge was balancing responsive editing, real-time collaboration, and durable persistence without turning the UX into lag or inconsistency.',
+    outcome:
+      'Published as a live app with public source code and clear proof of real-time systems work.',
+    imageGradient: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
+    ctaLabel: 'Open live app',
+    secondaryHref: 'https://github.com/FelmonFekadu/collab-editor',
+    secondaryLabel: 'Inspect source',
+    proofItems: [
+      'Live app plus public repository',
+      'Socket.io synchronization with autosave',
+      'PostgreSQL persistence through Prisma',
+      'GitHub OAuth and dual-service architecture',
+    ],
   },
   {
     title: 'commaai/opendbc PR',
+    tagline: 'Merged upstream testing contribution in a public open-source codebase.',
     description:
       'Merged upstream PR improving car test cache hypothesis strategies in a public open-source codebase.',
     tech: ['Testing', 'OSS', 'Verification'],
@@ -120,6 +162,27 @@ export const projects = [
     github: 'https://github.com/commaai/opendbc/pull/3052',
     live: 'https://github.com/commaai/opendbc/pull/3052',
     featured: false,
+    caseStudy: true,
+    problem:
+      'Public proof is stronger when it includes reviewed code in somebody else’s codebase, not just self-published projects. That means finding a concrete issue and making a change that can survive review.',
+    solution:
+      'Authored a focused upstream pull request improving cache hypothesis strategies in commaai/opendbc with test-backed changes and a narrow, reviewable scope.',
+    architecture:
+      'Python testing and verification work inside an established open-source repository with maintainer review and existing project standards.',
+    constraints:
+      'The contribution had to be technically correct, easy to review, and precise enough to fit an existing upstream codebase without overclaiming impact.',
+    outcome:
+      'Merged upstream on January 27, 2026, giving public proof of reviewable engineering work outside my own repositories.',
+    imageGradient: 'linear-gradient(135deg, #7c2d12 0%, #991b1b 100%)',
+    ctaLabel: 'Open merged PR',
+    secondaryHref: 'https://github.com/commaai/opendbc',
+    secondaryLabel: 'Open repository',
+    proofItems: [
+      'Merged January 27, 2026',
+      'Public maintainer review and accepted diff',
+      'Test-backed cache hypothesis change',
+      'Proof inside an upstream codebase, not self-published work',
+    ],
   },
   {
     title: 'Minecraft Web Client PR',
@@ -169,30 +232,6 @@ export const projects = [
 
 export const experiences = [
   {
-    title: 'Independent Product Builder',
-    company: 'Self-directed product work',
-    location: 'Remote',
-    period: '2025 - Present',
-    description: [
-      'Built and shipped TypeJung and Collab Editor across frontend, backend, auth, billing, and deployment workflows.',
-      'Worked across product UX, persistence, APIs, real-time collaboration, and production polish instead of isolated feature tasks.',
-      'Use public products as the main proof surface, with resume and portfolio claims kept narrower than the code supports.',
-    ],
-    tech: ['TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Real-Time Systems'],
-  },
-  {
-    title: 'AI Research Systems Builder',
-    company: 'Prime Lab + local R&D',
-    location: 'Remote',
-    period: '2025',
-    description: [
-      'Built a FastAPI and LangGraph backend MVP for multi-agent research workflows, plus a custom Prime Lab / Verifiers environment for self-improvement experiments.',
-      'Implemented streaming research updates, claim analysis scaffolding, and environment configs for evaluation and RL-style training loops.',
-      'Kept the public description precise: backend MVP and lab environment work, not a shipped production platform.',
-    ],
-    tech: ['Python', 'FastAPI', 'LangGraph', 'Verifiers', 'Prime Lab'],
-  },
-  {
     title: 'Open-Source PR Author',
     company: 'commaai/opendbc + selected upstream repos',
     location: 'Remote',
@@ -204,6 +243,41 @@ export const experiences = [
     ],
     tech: ['TypeScript', 'Rust', 'Testing', 'Open Source'],
   },
+  {
+    title: 'Safety Watch / Fire Watch',
+    company: 'United Safety',
+    location: 'Fort McMurray / Northern Alberta',
+    period: '2022 - 2024',
+    description: [
+      'Monitored high-risk operations and executed emergency response procedures at industrial sites.',
+      'Tracked atmospheric readings and maintained compliance and incident logs.',
+      'Coordinated with operations and technical teams in rotational camp environments.',
+    ],
+    tech: ['Safety Operations', 'Incident Logging', 'Team Coordination'],
+  },
+  {
+    title: 'Mobile Security Patrol Officer',
+    company: 'Security Services',
+    location: 'Calgary, AB',
+    period: '2020 - 2022',
+    description: [
+      'Conducted facility patrols and documented incidents using digital reporting systems.',
+      'Responded to alarms and coordinated with dispatch and emergency services.',
+    ],
+    tech: ['Operations', 'Reporting', 'Response Procedures'],
+  },
+  {
+    title: 'B.S. Computer Science Student',
+    company: 'University of the People',
+    location: 'Online',
+    period: 'Expected 2026',
+    description: [
+      'Focused on software engineering, algorithms, systems, and full-stack development.',
+      'Built portfolio projects spanning real-time systems, API design, and AI integrations.',
+      'Named to the UoPeople Honors List for Term 2, 2025-2026.',
+    ],
+    tech: ['Computer Science', 'Software Engineering', 'Project-Based Learning'],
+  },
 ]
 
 export const stats = [
@@ -212,6 +286,162 @@ export const stats = [
   { label: 'Submitted Upstream PRs', value: '4' },
   { label: 'Years Building', value: '3+' },
 ]
+
+export const heroSection = {
+  eyebrow: 'Full-stack software engineer',
+  summary:
+    'I build full-stack products with authentication, payments, real-time collaboration, and model-powered features. The strongest signal is public proof you can inspect: live apps, public repositories, and accepted upstream OSS where it exists.',
+  stackFocus: ['React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'AI / LLM'],
+  architectureNodes: [
+    { label: 'Frontend', color: '#7FB38A', delay: 0, indent: 0 },
+    { label: 'API Layer', color: '#C9A86A', delay: 0.1, indent: 1 },
+    { label: 'Services', color: '#7FB38A', delay: 0.2, indent: 2 },
+    { label: 'Database', color: '#C9A86A', delay: 0.3, indent: 1 },
+    { label: 'Infrastructure', color: '#7FB38A', delay: 0.4, indent: 0 },
+  ],
+}
+
+export const proofBarItems = [
+  {
+    value: '2',
+    label: 'Live Products',
+    description: 'Auth, billing, sync, and persistence in public apps',
+  },
+  {
+    value: '1',
+    label: 'Accepted Upstream PR',
+    description: 'Maintainer-reviewed merge in commaai/opendbc',
+  },
+  {
+    value: '4',
+    label: 'Submitted Upstream PRs',
+    description: 'Public proposals across TS, Python, and Rust repos',
+  },
+  {
+    value: '3+',
+    label: 'Years Building',
+    description: 'Built while studying and working outside tech',
+  },
+]
+
+export const aboutSection = {
+  meta: [
+    { label: 'Location', value: 'Alberta, Canada' },
+    { label: 'Education', value: 'B.S. Computer Science' },
+    { label: 'Focus', value: 'Full-stack, real-time systems, AI features' },
+    { label: 'Seeking', value: 'Full-time software engineering roles' },
+  ],
+  title: 'Building systems that solve real problems',
+  paragraphs: [
+    'I’m Felmon Fekadu, a software engineer building full-stack products, real-time collaboration tools, and model-powered workflows with an emphasis on clear interfaces, durable implementation, and inspectable proof.',
+    'My strongest evidence is public and concrete: shipped product work in TypeJung and Collab Editor, plus accepted and submitted upstream contributions that are labeled exactly as they are.',
+    'I’m looking for full-time roles where product judgment and engineering discipline both matter, especially teams shipping real software with high ownership and clear review standards.',
+  ],
+  principles: [
+    ['Clear interfaces', 'Make the product understandable before making it clever.'],
+    ['Real systems', 'Build for persistence, auth, payments, sync, and failure paths.'],
+    ['Honest proof', 'Lead with shipped work and label upstream contributions precisely.'],
+    ['Fast iteration', 'Ship, inspect, and improve instead of polishing in isolation.'],
+    ['Product ownership', 'Own outcomes, not just isolated implementation tasks.'],
+    ['Learning in public', 'Use repositories and PRs as public proof of engineering growth.'],
+  ],
+}
+
+export const engineeringDecisions = [
+  {
+    icon: 'database',
+    title: 'AI as a product capability',
+    copy:
+      'Model features are useful when they fit a clear workflow. I prefer bounded product use cases over AI ornamentation.',
+    exampleTitle: 'Example: TypeJung reports',
+    bullets: [
+      'Assessment flow, account state, and billing exist around the report generator.',
+      'AI output serves the product instead of replacing the product.',
+      'The proof is a live app, not just a prompt demo.',
+    ],
+    footer: 'Use models where they improve the workflow, not where they add theater.',
+  },
+  {
+    icon: 'zap',
+    title: 'Real-time behavior needs discipline',
+    copy:
+      'Collaboration features create state problems quickly. The work is keeping sync, autosave, and persistence coherent under real edits.',
+    exampleTitle: 'Example: Collab Editor',
+    bullets: [
+      'Socket-driven updates for shared editing.',
+      'Autosave and persistence built alongside the editor experience.',
+      'Real-time UX balanced against backend consistency.',
+    ],
+    footer: 'Fast interfaces only matter if the underlying state stays trustworthy.',
+  },
+  {
+    icon: 'shield',
+    title: 'Public review is part of the proof',
+    copy:
+      'Open-source contributions force precision. The claim only counts if the code can survive review in someone else’s codebase.',
+    exampleTitle: 'Example: commaai/opendbc PR',
+    bullets: [
+      'Targeted testing improvement instead of a vague contribution claim.',
+      'Public maintainer review and accepted merge outcome.',
+      'Submitted PRs elsewhere are labeled accurately when not merged.',
+    ],
+    footer: 'Reviewed code in public repositories is stronger proof than self-description.',
+  },
+]
+
+export const journeyTimeline = [
+  {
+    year: '2026',
+    type: 'milestone',
+    title: 'Open to full-time engineering roles',
+    description:
+      'Targeting full-time software engineering, full-stack, and AI product roles where product judgment and engineering standards both matter.',
+  },
+  {
+    year: '2026',
+    type: 'project',
+    title: 'Merged upstream PR in commaai/opendbc',
+    description:
+      'Accepted public contribution improving cache hypothesis strategies with test-backed changes in an upstream codebase.',
+  },
+  {
+    year: '2026',
+    type: 'project',
+    title: 'Shipped public portfolio products',
+    description:
+      'TypeJung and Collab Editor provide public proof of product engineering, real-time systems work, and model-powered features.',
+  },
+  {
+    year: '2025-2026',
+    type: 'education',
+    title: 'Computer Science studies at University of the People',
+    description:
+      'Focused on software engineering, systems, and full-stack development, with Honors List recognition in Term 2, 2025-2026.',
+  },
+  {
+    year: '2022-2024',
+    type: 'work',
+    title: 'Safety Watch / Fire Watch at United Safety',
+    description:
+      'High-risk industrial monitoring, atmospheric readings, compliance logs, and coordination with operations teams in northern Alberta.',
+  },
+  {
+    year: '2020-2022',
+    type: 'work',
+    title: 'Mobile Security Patrol Officer',
+    description:
+      'Facility patrols, alarm response, digital incident reporting, and dispatch coordination across mobile security operations.',
+  },
+]
+
+export const contactSection = {
+  eyebrow: "Let's work together",
+  title: 'Looking for an engineer who can build, learn fast, and own outcomes?',
+  summary:
+    'I’m interested in full-time roles where I can contribute to real products, grow under strong engineers, and keep shipping software that holds up under real use.',
+  footerLocation: 'Alberta, Canada',
+  footerAvailability: 'Open to relocation / remote-friendly',
+}
 
 export const proofOfWork = [
   {
@@ -250,3 +480,168 @@ export const proofOfWork = [
     url: 'https://github.com/zardoy/minecraft-web-client/pull/477',
   },
 ]
+
+export const githubSection = {
+  profileUrl: 'https://github.com/FelmonFekadu',
+  intro:
+    'Public repositories pulled from my actual GitHub profile, showing current product work, AI tooling, and experiments I build in the open.',
+  stats: [
+    { label: 'Contributions this year', value: '34' },
+    { label: 'PRs merged', value: '7' },
+    { label: 'Repositories', value: '32' },
+    { label: 'Stars earned', value: '1' },
+  ],
+  contributionWeeks: [
+    [0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 9, 8, 1, 1, 0],
+    [0, 2, 0, 0, 0, 3, 2],
+    [0, 0, 1, 1, 0, 0, 0],
+    [0, 0, 2, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+  ],
+  repoGroups: [
+    {
+      title: 'Shipped Products',
+      repos: [
+        {
+          name: 'jungian-typology-assessment',
+          description:
+            "Discover your true psychological type with the most accurate Jungian cognitive functions assessment. Based on Carl Jung's original theory.",
+          language: 'TypeScript',
+          stars: 1,
+          category: 'Product',
+          url: 'https://github.com/FelmonFekadu/jungian-typology-assessment',
+        },
+        {
+          name: 'collab-editor',
+          description:
+            'Real-time collaborative document editor built with Next.js, Tiptap, Socket.io, and PostgreSQL',
+          language: 'TypeScript',
+          stars: 0,
+          category: 'Product',
+          url: 'https://github.com/FelmonFekadu/collab-editor',
+        },
+        {
+          name: 'ai-speech-coach',
+          description:
+            'Real-time AI speech coaching with live video feedback — Tavus CVI, Claude, Next.js',
+          language: 'TypeScript',
+          stars: 0,
+          category: 'Product',
+          url: 'https://github.com/FelmonFekadu/ai-speech-coach',
+        },
+      ],
+    },
+    {
+      title: 'AI Tools & Experiments',
+      repos: [
+        {
+          name: 'docagent-studio',
+          description:
+            'Local-first personal docs assistant (PDF + Notion + Markdown) with citations, hybrid retrieval, GraphRAG-style index, and MLX LoRA fine-tuning.',
+          language: 'Python',
+          stars: 0,
+          category: 'AI Tool',
+          url: 'https://github.com/FelmonFekadu/docagent-studio',
+        },
+        {
+          name: 'rlm-skill',
+          description:
+            'RLM: Unlimited Context for Claude Code — implements Recursive Language Models (arXiv:2512.24601) as a native skill',
+          language: 'Python',
+          stars: 0,
+          category: 'Research',
+          url: 'https://github.com/FelmonFekadu/rlm-skill',
+        },
+        {
+          name: 'constitutional-playground',
+          description:
+            'Constitutional AI Playground - An interactive platform for experimenting with Constitutional AI principles',
+          language: 'TypeScript',
+          stars: 0,
+          category: 'Experiment',
+          url: 'https://github.com/FelmonFekadu/constitutional-playground',
+        },
+      ],
+    },
+    {
+      title: 'Systems & Utilities',
+      repos: [
+        {
+          name: 'Pulse',
+          description:
+            'macOS System Monitor Widget - Real-time CPU, RAM, Disk, Battery & Network monitoring',
+          language: 'Swift',
+          stars: 0,
+          category: 'Utility',
+          url: 'https://github.com/FelmonFekadu/Pulse',
+        },
+        {
+          name: 'agent-collab',
+          description:
+            'Inter-agent collaboration protocol — structured task delegation, progress tracking, shared context, and conflict resolution for AI agents',
+          language: 'Python',
+          stars: 0,
+          category: 'Protocol',
+          url: 'https://github.com/FelmonFekadu/agent-collab',
+        },
+        {
+          name: 'trust-protocol',
+          description:
+            'Agent Trust Protocol (ATP) — Multi-dimensional trust scoring for AI agent networks',
+          language: 'Python',
+          stars: 0,
+          category: 'Protocol',
+          url: 'https://github.com/FelmonFekadu/trust-protocol',
+        },
+      ],
+    },
+  ],
+}

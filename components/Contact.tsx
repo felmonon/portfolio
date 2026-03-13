@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from 'react'
 import { Copy, Github, Linkedin, Mail, MapPin } from 'lucide-react'
-import { resumeLinks } from '@/lib/data'
+import { resumeLinks, socialLinks } from '@/lib/data'
 
 export default function Contact() {
   const [copied, setCopied] = useState(false)
@@ -13,6 +13,8 @@ export default function Contact() {
   })
 
   const email = 'felmonon@gmail.com'
+  const githubLink = socialLinks.find((link) => link.icon === 'github')?.url
+  const linkedInLink = socialLinks.find((link) => link.icon === 'linkedin')?.url
 
   const copyEmail = async () => {
     try {
@@ -40,12 +42,12 @@ export default function Contact() {
           <div className="section-side reveal-up">
             <p className="section-index">05</p>
             <p className="section-kicker">Contact</p>
-            <h2 className="section-heading">Open to teams with a real quality bar.</h2>
+            <h2 className="section-heading">Open to teams with a real engineering bar.</h2>
           </div>
 
           <div className="section-main">
             <p className="section-lede reveal-up">
-              I am looking for full-time software developer and product-focused roles where I can
+              I am looking for full-time software engineering and product-focused roles where I can
               contribute quickly, learn from strong review culture, and keep shipping visible
               progress.
             </p>
@@ -78,7 +80,7 @@ export default function Contact() {
                   <p className="contact-note">Profiles</p>
                   <div className="contact-links">
                     <a
-                      href="https://github.com/FELMONON"
+                      href={githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="contact-inline-link"
@@ -87,7 +89,7 @@ export default function Contact() {
                       GitHub
                     </a>
                     <a
-                      href="https://linkedin.com/in/felmonfekadu"
+                      href={linkedInLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="contact-inline-link"
