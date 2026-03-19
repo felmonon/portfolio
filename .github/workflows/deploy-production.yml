@@ -14,8 +14,10 @@ permissions:
   contents: read
 
 env:
+  NODE_VERSION: 22
   VERCEL_ORG_ID: team_AR0EczaEZNOZ2pV96JL2zZCO
   VERCEL_PROJECT_ID: prj_ZqMESKTy7LGYJtFf67ydgfQYbUOq
+  VERCEL_CLI_VERSION: 50.34.1
 
 jobs:
   deploy:
@@ -23,12 +25,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Install dependencies
@@ -41,7 +43,7 @@ jobs:
         run: npm run lint
 
       - name: Pull Vercel project settings
-        run: npx vercel@latest pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel@${{ env.VERCEL_CLI_VERSION }} pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to production
-        run: npx vercel@latest deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel@${{ env.VERCEL_CLI_VERSION }} deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
