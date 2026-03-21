@@ -1,13 +1,16 @@
-name: Deploy Production
+name: CI
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 concurrency:
-  group: deploy-production
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -15,12 +18,9 @@ permissions:
 
 env:
   NODE_VERSION: 22
-  VERCEL_ORG_ID: team_AR0EczaEZNOZ2pV96JL2zZCO
-  VERCEL_PROJECT_ID: prj_ZqMESKTy7LGYJtFf67ydgfQYbUOq
-  VERCEL_CLI_VERSION: 50.34.1
 
 jobs:
-  deploy:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,14 +36,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test
-
       - name: Run lint
         run: npm run lint
 
-      - name: Pull Vercel project settings
-        run: npx vercel@${{ env.VERCEL_CLI_VERSION }} pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Run tests
+        run: npm test
 
-      - name: Deploy to production
-        run: npx vercel@${{ env.VERCEL_CLI_VERSION }} deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build
+        run: npm run build
