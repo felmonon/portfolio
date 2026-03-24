@@ -1,8 +1,5 @@
-'use client'
-
 import Image from 'next/image'
-import { useEffect, useState, type ReactNode } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import type { ReactNode } from 'react'
 import {
   ArrowRight,
   Check,
@@ -195,40 +192,9 @@ function TechTag({ children }: { children: ReactNode }) {
 }
 
 function AnimatedMetric({ value, label }: { value: string; label: string }) {
-  const match = value.match(/^(\d+)(.*)$/)
-  const targetValue = match ? Number.parseInt(match[1], 10) : 0
-  const suffix = match?.[2] ?? ''
-  const [count, setCount] = useState(0)
-  const shouldReduceMotion = useReducedMotion()
-
-  useEffect(() => {
-    if (!match || shouldReduceMotion) {
-      setCount(targetValue)
-      return
-    }
-
-    const duration = 1200
-    const steps = 40
-    const increment = targetValue / steps
-    let current = 0
-
-    const timer = window.setInterval(() => {
-      current += increment
-
-      if (current >= targetValue) {
-        setCount(targetValue)
-        window.clearInterval(timer)
-      } else {
-        setCount(Math.floor(current))
-      }
-    }, duration / steps)
-
-    return () => window.clearInterval(timer)
-  }, [match, shouldReduceMotion, targetValue])
-
   return (
     <div>
-      <div className="mb-1 text-3xl font-semibold text-[#F5F5F0]">{match ? `${count}${suffix}` : value}</div>
+      <div className="mb-1 text-3xl font-semibold text-[#F5F5F0]">{value}</div>
       <div className="text-sm text-[#71717A]">{label}</div>
     </div>
   )
@@ -459,32 +425,6 @@ function CaseStudyBlock({
 }
 
 function Navigation() {
-  const [activeSection, setActiveSection] = useState('hero')
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40)
-
-      const sections = ['hero', 'about', 'case-studies', 'experience', 'github', 'contact']
-      const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
-        if (!element) return false
-
-        const rect = element.getBoundingClientRect()
-        return rect.top <= 120 && rect.bottom >= 120
-      })
-
-      if (currentSection) {
-        setActiveSection(currentSection)
-      }
-    }
-
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   const navItems = [
     { id: 'about', label: 'About' },
     { id: 'case-studies', label: 'Work' },
@@ -494,14 +434,7 @@ function Navigation() {
   ]
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'border-b border-[#232326]/70 bg-[#0A0A0A]/85 backdrop-blur-xl' : 'bg-transparent'
-      }`}
-    >
+    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-[#232326]/70 bg-[#0A0A0A]/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-4 xl:px-8">
         <a
           href="#hero"
@@ -515,12 +448,7 @@ function Navigation() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              aria-current={activeSection === item.id ? 'page' : undefined}
-              className={`rounded-lg px-4 py-2 text-sm transition-all ${focusRingClass} ${
-                activeSection === item.id
-                  ? 'bg-[#171717] text-[#C9A86A]'
-                  : 'text-[#A1A1AA] hover:bg-[#111111] hover:text-[#F5F5F0]'
-              }`}
+              className={`rounded-lg px-4 py-2 text-sm text-[#A1A1AA] transition-all hover:bg-[#111111] hover:text-[#F5F5F0] ${focusRingClass}`}
             >
               {item.label}
             </a>
@@ -550,30 +478,12 @@ function Navigation() {
           ) : null}
         </div>
       </div>
-    </motion.nav>
+    </nav>
   )
 }
 
 function Hero() {
-  const shouldReduceMotion = useReducedMotion()
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const mergedProof = proofOfWork[0]
-
-  useEffect(() => {
-    if (shouldReduceMotion) {
-      return
-    }
-
-    const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({
-        x: (event.clientX / window.innerWidth - 0.5) * 18,
-        y: (event.clientY / window.innerHeight - 0.5) * 18,
-      })
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [shouldReduceMotion])
 
   return (
     <section id="hero" className="scroll-mt-28 overflow-hidden px-6 pt-28 xl:px-8">
@@ -589,53 +499,30 @@ function Hero() {
           />
         </div>
 
-        <motion.div
+        <div
           className="absolute right-[10%] top-[12%] h-[420px] w-[420px] rounded-full opacity-[0.04] blur-[120px]"
           style={{
             background: 'radial-gradient(circle, #C9A86A 0%, transparent 70%)',
-            x: shouldReduceMotion ? 0 : mousePosition.x,
-            y: shouldReduceMotion ? 0 : mousePosition.y,
           }}
-          transition={{ type: 'spring', stiffness: 45, damping: 30 }}
         />
 
         <div className="relative z-10 grid gap-10 py-10 xl:grid-cols-12 xl:items-center">
           <div className="xl:col-span-7">
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.1 }}
-              className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#C9A86A]"
-            >
+            <div className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#C9A86A]">
               {heroSection.eyebrow}
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.18 }}
-              className="mb-6 max-w-4xl font-serif text-5xl leading-[1.05] text-[#F5F5F0] md:text-6xl xl:text-7xl"
-            >
+            <h1 className="mb-6 max-w-4xl font-serif text-5xl leading-[1.05] text-[#F5F5F0] md:text-6xl xl:text-7xl">
               I build products that are <span className="text-[#C9A86A]">useful</span>,{' '}
               <span className="text-[#C9A86A]">fast</span>, and{' '}
               <span className="text-[#C9A86A]">real</span>.
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.26 }}
-              className="mb-8 max-w-2xl text-lg leading-relaxed text-[#A1A1AA] md:text-xl"
-            >
+            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-[#A1A1AA] md:text-xl">
               {heroSection.summary}
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.34 }}
-              className="mb-8 flex flex-wrap items-center gap-4"
-            >
+            <div className="mb-8 flex flex-wrap items-center gap-4">
               <PrimaryButton href="#case-studies" showArrow>
                 View case studies
               </PrimaryButton>
@@ -657,14 +544,9 @@ function Hero() {
                   Resume
                 </a>
               ) : null}
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.42 }}
-              className="flex flex-wrap gap-3"
-            >
+            <div className="flex flex-wrap gap-3">
               {heroSignals.map((item) => (
                 <div
                   key={item}
@@ -673,15 +555,10 @@ function Hero() {
                   {item}
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.28 }}
-            className="xl:col-span-5"
-          >
+          <div className="xl:col-span-5">
             <div className="rounded-[28px] border border-[#232326] bg-[#111111] p-8 shadow-[0_30px_80px_rgba(0,0,0,0.22)]">
               <div className="mb-6 flex items-center justify-between gap-4">
                 <div>
@@ -738,7 +615,7 @@ function Hero() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
@@ -746,8 +623,6 @@ function Hero() {
 }
 
 function ProofBar() {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
     <section className="border-t border-[#232326] px-6 py-20 xl:px-8">
       <div className="mx-auto max-w-[1440px]">
@@ -763,16 +638,10 @@ function ProofBar() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {proofBarItems.map((metric, index) => (
-            <motion.div
-              key={metric.label}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.45, delay: shouldReduceMotion ? 0 : index * 0.08 }}
-            >
+          {proofBarItems.map((metric) => (
+            <div key={metric.label}>
               <MetricCard value={metric.value} label={metric.label} description={metric.description} />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -781,19 +650,11 @@ function ProofBar() {
 }
 
 function About() {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
     <section id="about" className="scroll-mt-28 border-t border-[#232326] px-6 py-28 xl:px-8">
       <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-10 xl:grid-cols-12 xl:gap-12">
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.55 }}
-            className="xl:col-span-4"
-          >
+          <div className="xl:col-span-4">
             <div className="group mb-6 overflow-hidden rounded-[28px] border border-[#232326] bg-[#111111] transition-all duration-500 hover:border-[#C9A86A]/30">
               <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-[#171717] to-[#111111]">
                 <Image
@@ -819,7 +680,7 @@ function About() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           <div className="xl:col-span-8">
             <div className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#C9A86A]">Engineering profile</div>

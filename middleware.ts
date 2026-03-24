@@ -2,12 +2,17 @@ import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
 const ACCESS_COOKIE_NAME = 'portfolio_access'
+const PRIVATE_VISIBILITY_MODE = 'private'
 
 const PUBLIC_PATH_PREFIXES = ['/access', '/api/access', '/_next']
 const PUBLIC_PATHS = new Set(['/favicon.ico'])
 
 function normalizeCredential(value: string | undefined) {
   return value?.trim() ?? ''
+}
+
+function isPrivateVisibilityEnabled() {
+  return normalizeCredential(process.env.PORTFOLIO_VISIBILITY).toLowerCase() === PRIVATE_VISIBILITY_MODE
 }
 
 function isPublicPath(pathname: string) {
@@ -36,6 +41,10 @@ async function createAccessToken(username: string, password: string) {
 }
 
 export async function middleware(request: NextRequest) {
+  if (!isPrivateVisibilityEnabled()) {
+    return NextResponse.next()
+  }
+
   const configuredUsername = normalizeCredential(process.env.BASIC_AUTH_USERNAME)
   const configuredPassword = normalizeCredential(process.env.BASIC_AUTH_PASSWORD)
 

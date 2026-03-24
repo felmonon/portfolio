@@ -1,8 +1,30 @@
+import type { Metadata } from 'next'
+import { socialLinks } from '@/lib/data'
+
 interface AccessPageProps {
   searchParams?: {
     error?: string
     next?: string
   }
+}
+
+function normalizeCredential(value: string | undefined) {
+  return value?.trim() ?? ''
+}
+
+const isPrivateModeEnabled =
+  normalizeCredential(process.env.PORTFOLIO_VISIBILITY).toLowerCase() === 'private'
+const emailLink = socialLinks.find((link) => link.icon === 'mail')
+const githubLink = socialLinks.find((link) => link.icon === 'github')
+const linkedInLink = socialLinks.find((link) => link.icon === 'linkedin')
+
+export const metadata: Metadata = {
+  title: 'Private Access | Felmon Fekadu',
+  description: 'Private reviewer access for Felmon Fekadu’s engineering portfolio.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function AccessPage({ searchParams }: AccessPageProps) {
@@ -88,50 +110,67 @@ export default function AccessPage({ searchParams }: AccessPageProps) {
                 Access is limited to approved reviewers. The session stays active on this browser
                 after a successful sign-in.
               </p>
+
+              {!isPrivateModeEnabled ? (
+                <p className="mt-3 text-sm leading-relaxed text-[#B0B0B6]">
+                  The public portfolio is already live. This page is only needed when private
+                  review mode is enabled.
+                </p>
+              ) : null}
             </div>
 
-            <form action="/api/access" method="post" className="space-y-5">
-              <input type="hidden" name="next" value={nextPath} />
+            {isPrivateModeEnabled ? (
+              <form action="/api/access" method="post" className="space-y-5">
+                <input type="hidden" name="next" value={nextPath} />
 
-              <label className="block">
-                <span className="mb-2 block text-sm font-medium text-[#F5F5F0]">Username</span>
-                <input
-                  type="text"
-                  name="username"
-                  autoComplete="username"
-                  required
-                  className="w-full rounded-2xl border border-[#2B2B31] bg-[#0D0D0D] px-4 py-3 text-base text-[#F5F5F0] outline-none transition-all placeholder:text-[#5C5C63] focus:border-[#C9A86A] focus:ring-2 focus:ring-[#C9A86A]/20"
-                  placeholder="Enter username"
-                />
-              </label>
+                <label className="block">
+                  <span className="mb-2 block text-sm font-medium text-[#F5F5F0]">Username</span>
+                  <input
+                    type="text"
+                    name="username"
+                    autoComplete="username"
+                    required
+                    className="w-full rounded-2xl border border-[#2B2B31] bg-[#0D0D0D] px-4 py-3 text-base text-[#F5F5F0] outline-none transition-all placeholder:text-[#5C5C63] focus:border-[#C9A86A] focus:ring-2 focus:ring-[#C9A86A]/20"
+                    placeholder="Enter username"
+                  />
+                </label>
 
-              <label className="block">
-                <span className="mb-2 block text-sm font-medium text-[#F5F5F0]">Password</span>
-                <input
-                  type="password"
-                  name="password"
-                  autoComplete="current-password"
-                  required
-                  aria-invalid={hasError}
-                  className="w-full rounded-2xl border border-[#2B2B31] bg-[#0D0D0D] px-4 py-3 text-base text-[#F5F5F0] outline-none transition-all placeholder:text-[#5C5C63] focus:border-[#C9A86A] focus:ring-2 focus:ring-[#C9A86A]/20 aria-[invalid=true]:border-[#A84B4B] aria-[invalid=true]:focus:ring-[#A84B4B]/20"
-                  placeholder="Enter password"
-                />
-              </label>
+                <label className="block">
+                  <span className="mb-2 block text-sm font-medium text-[#F5F5F0]">Password</span>
+                  <input
+                    type="password"
+                    name="password"
+                    autoComplete="current-password"
+                    required
+                    aria-invalid={hasError}
+                    className="w-full rounded-2xl border border-[#2B2B31] bg-[#0D0D0D] px-4 py-3 text-base text-[#F5F5F0] outline-none transition-all placeholder:text-[#5C5C63] focus:border-[#C9A86A] focus:ring-2 focus:ring-[#C9A86A]/20 aria-[invalid=true]:border-[#A84B4B] aria-[invalid=true]:focus:ring-[#A84B4B]/20"
+                    placeholder="Enter password"
+                  />
+                </label>
 
-              {hasError ? (
-                <div className="rounded-2xl border border-[#5A2E2E] bg-[#281717] px-4 py-3 text-sm text-[#F2C1C1]">
-                  The username or password was incorrect. Try again with the shared access
-                  credentials.
-                </div>
-              ) : null}
+                {hasError ? (
+                  <div className="rounded-2xl border border-[#5A2E2E] bg-[#281717] px-4 py-3 text-sm text-[#F2C1C1]">
+                    The username or password was incorrect. Try again with the shared access
+                    credentials.
+                  </div>
+                ) : null}
 
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#C9A86A] px-5 py-3 font-medium text-[#0A0A0A] transition-all duration-300 hover:bg-[#D4B57A] hover:shadow-[0_0_24px_rgba(201,168,106,0.25)] focus:outline-none focus:ring-2 focus:ring-[#C9A86A] focus:ring-offset-2 focus:ring-offset-[#111111]"
-              >
-                Open portfolio
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#C9A86A] px-5 py-3 font-medium text-[#0A0A0A] transition-all duration-300 hover:bg-[#D4B57A] hover:shadow-[0_0_24px_rgba(201,168,106,0.25)] focus:outline-none focus:ring-2 focus:ring-[#C9A86A] focus:ring-offset-2 focus:ring-offset-[#111111]"
+                >
+                  Open portfolio
+                </button>
+              </form>
+            ) : (
+              <div className="rounded-2xl border border-[#2B2B31] bg-[#0D0D0D] p-5">
+                <div className="text-sm font-medium text-[#F5F5F0]">Public mode is enabled.</div>
+                <p className="mt-2 text-sm leading-relaxed text-[#8F8F96]">
+                  The portfolio homepage is publicly accessible, so you do not need credentials to
+                  continue.
+                </p>
+              </div>
+            )}
 
             <div className="mt-8 border-t border-[#232326] pt-6">
               <div className="text-[11px] uppercase tracking-[0.24em] text-[#71717A]">
@@ -141,6 +180,48 @@ export default function AccessPage({ searchParams }: AccessPageProps) {
                 If you need credentials, request them directly from Felmon. Portfolio content,
                 resume assets, and project links remain protected until access is granted.
               </p>
+
+              <div className="mt-5 flex flex-wrap gap-3">
+                {!isPrivateModeEnabled ? (
+                  <a
+                    href="/"
+                    className="inline-flex items-center justify-center rounded-2xl border border-[#2B2B31] px-4 py-2 text-sm text-[#F5F5F0] transition-colors hover:border-[#C9A86A] hover:text-[#C9A86A]"
+                  >
+                    View public portfolio
+                  </a>
+                ) : null}
+
+                {emailLink ? (
+                  <a
+                    href={emailLink.url}
+                    className="inline-flex items-center justify-center rounded-2xl border border-[#2B2B31] px-4 py-2 text-sm text-[#F5F5F0] transition-colors hover:border-[#C9A86A] hover:text-[#C9A86A]"
+                  >
+                    Email Felmon
+                  </a>
+                ) : null}
+
+                {linkedInLink ? (
+                  <a
+                    href={linkedInLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-2xl border border-[#2B2B31] px-4 py-2 text-sm text-[#F5F5F0] transition-colors hover:border-[#C9A86A] hover:text-[#C9A86A]"
+                  >
+                    LinkedIn
+                  </a>
+                ) : null}
+
+                {githubLink ? (
+                  <a
+                    href={githubLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-2xl border border-[#2B2B31] px-4 py-2 text-sm text-[#F5F5F0] transition-colors hover:border-[#C9A86A] hover:text-[#C9A86A]"
+                  >
+                    GitHub
+                  </a>
+                ) : null}
+              </div>
             </div>
           </section>
         </div>

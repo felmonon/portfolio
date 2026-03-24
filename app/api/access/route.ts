@@ -3,9 +3,14 @@ import { NextResponse } from 'next/server'
 
 const ACCESS_COOKIE_NAME = 'portfolio_access'
 const ACCESS_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
+const PRIVATE_VISIBILITY_MODE = 'private'
 
 function normalizeCredential(value: string | undefined) {
   return value?.trim() ?? ''
+}
+
+function isPrivateVisibilityEnabled() {
+  return normalizeCredential(process.env.PORTFOLIO_VISIBILITY).toLowerCase() === PRIVATE_VISIBILITY_MODE
 }
 
 function getSafeRedirectPath(value: FormDataEntryValue | null) {
@@ -26,6 +31,13 @@ async function createAccessToken(username: string, password: string) {
 }
 
 export async function POST(request: NextRequest) {
+  const formData = await request.formData()
+  const nextPath = getSafeRedirectPath(formData.get('next'))
+
+  if (!isPrivateVisibilityEnabled()) {
+    return NextResponse.redirect(new URL(nextPath, request.url), { status: 303 })
+  }
+
   const configuredUsername = normalizeCredential(process.env.BASIC_AUTH_USERNAME)
   const configuredPassword = normalizeCredential(process.env.BASIC_AUTH_PASSWORD)
 
@@ -38,10 +50,8 @@ export async function POST(request: NextRequest) {
     })
   }
 
-  const formData = await request.formData()
   const submittedUsername = normalizeCredential(formData.get('username')?.toString())
   const submittedPassword = normalizeCredential(formData.get('password')?.toString())
-  const nextPath = getSafeRedirectPath(formData.get('next'))
 
   if (submittedUsername !== configuredUsername || submittedPassword !== configuredPassword) {
     const loginUrl = new URL('/access', request.url)
