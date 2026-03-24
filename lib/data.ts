@@ -10,21 +10,21 @@ export const navLinks = [
 ]
 
 export const roles = [
-  'AI Product Engineer',
-  'Software Engineer',
-  'LLM Integration Builder',
-  'Shipped Product Builder',
+  'Full-Stack Engineer',
+  'OSS Contributor',
+  'AI Tooling Builder',
+  'Product Engineer',
 ]
 
 export const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/FelmonFekadu',
+    url: 'https://github.com/felmonon',
     icon: 'github',
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/felmonfekadu',
+    url: 'https://www.linkedin.com/in/felmon-fekadu/',
     icon: 'linkedin',
   },
   {
@@ -42,10 +42,6 @@ export const resumeLinks = [
   {
     name: 'AI / LLM Resume',
     url: '/resumes/Felmon_Fekadu_Resume_AI_LLM_2026.pdf',
-  },
-  {
-    name: 'Public Equities Resume',
-    url: '/resumes/Felmon_Fekadu_Resume_Public_Equities_QuantTech_2026.pdf',
   },
 ]
 
@@ -93,7 +89,7 @@ export const projects = [
     tech: ['React', 'TypeScript', 'Express', 'Supabase', 'Stripe', 'Gemini'],
     category: 'Flagship Product',
     image: '/images/project-jungian.png',
-    github: 'https://github.com/FelmonFekadu/jungian-typology-assessment',
+    github: 'https://github.com/felmonon/jungian-typology-assessment',
     live: 'https://typejung.com',
     featured: true,
     caseStudy: true,
@@ -109,7 +105,7 @@ export const projects = [
       'Shipped publicly at typejung.com with tiered monetization, public source code, and inspectable product behavior.',
     imageGradient: 'linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%)',
     ctaLabel: 'Open live product',
-    secondaryHref: 'https://github.com/FelmonFekadu/jungian-typology-assessment',
+    secondaryHref: 'https://github.com/felmonon/jungian-typology-assessment',
     secondaryLabel: 'Inspect source',
     proofItems: [
       'Live product at typejung.com',
@@ -126,7 +122,7 @@ export const projects = [
     tech: ['Next.js', 'TypeScript', 'Socket.io', 'Tiptap', 'PostgreSQL', 'Prisma'],
     category: 'Real-Time Web App',
     image: '/images/project-collab.png',
-    github: 'https://github.com/FelmonFekadu/collab-editor',
+    github: 'https://github.com/felmonon/collab-editor',
     live: 'https://collab-editor-sand.vercel.app',
     featured: true,
     caseStudy: true,
@@ -142,7 +138,7 @@ export const projects = [
       'Published as a live app with public source code and clear proof of real-time systems work.',
     imageGradient: 'linear-gradient(135deg, #059669 0%, #047857 100%)',
     ctaLabel: 'Open live app',
-    secondaryHref: 'https://github.com/FelmonFekadu/collab-editor',
+    secondaryHref: 'https://github.com/felmonon/collab-editor',
     secondaryLabel: 'Inspect source',
     proofItems: [
       'Live app plus public repository',
@@ -521,7 +517,7 @@ export const contactSection = {
   eyebrow: "Let's work together",
   title: 'Looking for an engineer who can build, learn fast, and own outcomes?',
   summary:
-    'I\u2019m interested in engineering roles where I can contribute to real products, grow under strong engineers, and keep shipping software that holds up under real use.',
+    'I\u2019m looking for engineering teams that ship real products with high standards \u2014 where I can contribute meaningful code from day one.',
   footerLocation: 'Alberta, Canada',
   footerAvailability: 'Open to relocation / remote-friendly',
 }
@@ -565,13 +561,13 @@ export const proofOfWork = [
 ]
 
 export const githubSection = {
-  profileUrl: 'https://github.com/FelmonFekadu',
+  profileUrl: 'https://github.com/felmonon',
   intro:
     'Public repositories pulled from my actual GitHub profile, showing current product work, AI tooling, and experiments I build in the open.',
   stats: [
-    { label: 'Contributions this year', value: '34' },
-    { label: 'PRs merged', value: '7' },
-    { label: 'Repositories', value: '32' },
+    { label: 'Contributions this year', value: '176' },
+    { label: 'PRs merged', value: '6' },
+    { label: 'Repositories', value: '26' },
     { label: 'Stars earned', value: '1' },
   ],
   contributionWeeks: [
@@ -636,11 +632,11 @@ export const githubSection = {
         {
           name: 'jungian-typology-assessment',
           description:
-            "Discover your true psychological type with the most accurate Jungian cognitive functions assessment. Based on Carl Jung's original theory.",
+            'Full-stack Jungian typology assessment with auth, billing, persisted results, and AI-generated reports.',
           language: 'TypeScript',
           stars: 1,
           category: 'Product',
-          url: 'https://github.com/FelmonFekadu/jungian-typology-assessment',
+          url: 'https://github.com/felmonon/jungian-typology-assessment',
         },
         {
           name: 'docagent-studio',
@@ -649,7 +645,7 @@ export const githubSection = {
           language: 'Python',
           stars: 0,
           category: 'AI Tool',
-          url: 'https://github.com/FelmonFekadu/docagent-studio',
+          url: 'https://github.com/felmonon/docagent-studio',
         },
         {
           name: 'collab-editor',
@@ -668,11 +664,11 @@ export const githubSection = {
         {
           name: 'constitutional-playground',
           description:
-            'Constitutional AI Playground - An interactive platform for experimenting with Constitutional AI principles',
+            'Side-by-side comparison of Constitutional AI critique and revision loops in real time.',
           language: 'TypeScript',
           stars: 0,
           category: 'Experiment',
-          url: 'https://github.com/FelmonFekadu/constitutional-playground',
+          url: 'https://github.com/felmonon/constitutional-playground',
         },
         {
           name: 'neuroflow',
@@ -686,11 +682,11 @@ export const githubSection = {
         {
           name: 'GuardTrack',
           description:
-            'Security patrol management and incident tracking system',
+            'Guard patrol tracking app with geofencing, session management, checkpoint logging, and offline support.',
           language: 'TypeScript',
           stars: 0,
           category: 'Product',
-          url: 'https://github.com/FelmonFekadu/GuardTrack',
+          url: 'https://github.com/felmonon/GuardTrack',
         },
       ],
     },
