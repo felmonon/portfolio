@@ -654,11 +654,11 @@ export const githubSection = {
         {
           name: 'collab-editor',
           description:
-            'Real-time collaborative document editor built with Next.js, Tiptap, Socket.io, and PostgreSQL',
+            'Real-time collaborative editor with shared document rooms, presence, remote cursors, autosave, and PostgreSQL persistence.',
           language: 'TypeScript',
           stars: 0,
           category: 'Product',
-          url: 'https://github.com/FelmonFekadu/collab-editor',
+          url: 'https://github.com/felmonon/collab-editor',
         },
       ],
     },
@@ -677,11 +677,11 @@ export const githubSection = {
         {
           name: 'neuroflow',
           description:
-            'Neural network visualization and experimentation tool for exploring model architectures and training dynamics',
-          language: 'Python',
+            'ADHD-focused planner with AI task breakdown, scheduling flows, and body-doubling support.',
+          language: 'TypeScript',
           stars: 0,
           category: 'AI Tool',
-          url: 'https://github.com/FelmonFekadu/neuroflow',
+          url: 'https://github.com/felmonon/neuroflow',
         },
         {
           name: 'GuardTrack',
