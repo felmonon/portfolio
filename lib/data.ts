@@ -283,7 +283,7 @@ export const projects = [
     title: 'withastro/astro',
     tagline: 'Fixed language server completion deferral bug in the Astro framework.',
     description:
-      'Fixed language server incorrectly deferring HTML expression completions to TypeScript plugin. 1 merged, 4 open PRs across type system, accessibility audit, and image tooling.',
+      'Fixed language server incorrectly deferring HTML expression completions to TypeScript plugin. 2 merged, 3 open PRs across type system, accessibility audit, and image tooling.',
     tech: ['TypeScript', 'Language Server', 'Developer Tools', 'OSS'],
     category: 'Merged PR',
     image: '/images/project-langchain.png',
@@ -300,13 +300,13 @@ export const projects = [
     constraints:
       'Language server changes must handle edge cases across all Astro template expressions without regressing existing completions.',
     outcome:
-      '1 PR merged, 4 additional PRs open across type system, accessibility audit, and image tooling.',
+      '2 PRs merged, 3 additional PRs open across type system, accessibility audit, and image tooling.',
     imageGradient: 'linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%)',
     ctaLabel: 'Open merged PR',
     secondaryHref: 'https://github.com/withastro/astro',
     secondaryLabel: 'Open repository',
     proofItems: [
-      '1 merged, 4 open PRs',
+      '2 merged, 3 open PRs',
       'Language server completion fix',
       'Type system, a11y, and image tooling contributions',
       'Active contributor to Astro framework',
@@ -394,7 +394,7 @@ export const experiences = [
 
 export const stats = [
   { label: 'Shipped Products', value: '4' },
-  { label: 'Merged PRs', value: '6' },
+  { label: 'Merged PRs', value: '7' },
   { label: 'OSS Pull Requests', value: '14' },
   { label: 'Years Building', value: '3+' },
 ]
@@ -402,7 +402,7 @@ export const stats = [
 export const heroSection = {
   eyebrow: 'Full-stack software engineer',
   summary:
-    'I build full-stack products with authentication, payments, real-time collaboration, and AI-powered workflows. The strongest signal is public proof you can inspect: live apps, public repositories, and six merged PRs across OpenAI, MSW, Astro, and comma.ai.',
+    'I build full-stack products with authentication, payments, real-time collaboration, and AI-powered workflows. The strongest signal is public proof you can inspect: live apps, public repositories, and seven merged PRs across OpenAI, MSW, Astro, and comma.ai.',
   stackFocus: ['React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'AI / LLM'],
   architectureNodes: [
     { label: 'Frontend', color: '#7FB38A', delay: 0, indent: 0 },
@@ -420,7 +420,7 @@ export const proofBarItems = [
     description: 'TypeJung, Collab Editor, DocAgent Studio, and msw-inspector',
   },
   {
-    value: '6',
+    value: '7',
     label: 'Merged PRs',
     description: 'Accepted upstream in OpenAI, MSW, Astro, and comma.ai',
   },
@@ -446,7 +446,7 @@ export const aboutSection = {
   title: 'Building systems that solve real problems',
   paragraphs: [
     'I\u2019m Felmon Fekadu, a software engineer in Calgary building full-stack products, real-time systems, and AI-powered workflows. I ship code with clear interfaces, tested behavior, and public proof.',
-    'My strongest evidence is public and verifiable: shipped products at typejung.com and collab-editor-sand.vercel.app, a local-first RAG system in docagent-studio, and six merged pull requests across OpenAI, MSW, Astro, and comma.ai.',
+    'My strongest evidence is public and verifiable: shipped products at typejung.com and collab-editor-sand.vercel.app, a local-first RAG system in docagent-studio, and seven merged pull requests across OpenAI, MSW, Astro, and comma.ai.',
     'I\u2019m looking for engineering roles where product judgment and technical discipline both matter \u2014 teams shipping real software with high ownership and clear review standards.',
   ],
   principles: [
@@ -490,7 +490,7 @@ export const engineeringDecisions = [
     icon: 'shield',
     title: 'Public review is part of the proof',
     copy:
-      'Open-source contributions force precision. Six merged PRs across OpenAI, MSW, Astro, and comma.ai — each surviving maintainer review in codebases used by thousands.',
+      'Open-source contributions force precision. Seven merged PRs across OpenAI, MSW, Astro, and comma.ai — each surviving maintainer review in codebases used by thousands.',
     exampleTitle: 'Example: OpenAI, MSW, Astro, comma.ai',
     bullets: [
       'Race condition fixes, type system bugs, and test infrastructure improvements.',
@@ -512,7 +512,7 @@ export const journeyTimeline = [
   {
     year: '2026',
     type: 'project',
-    title: '6 merged PRs across OpenAI, MSW, Astro, and comma.ai',
+    title: '7 merged PRs across OpenAI, MSW, Astro, and comma.ai',
     description:
       'Upstream contributions fixing race conditions, type system bugs, test infrastructure, and developer tooling in codebases used by hundreds of thousands of developers.',
   },
@@ -578,6 +578,13 @@ export const proofOfWork = [
     url: 'https://github.com/withastro/astro/pull/15927',
   },
   {
+    label: 'withastro/astro - getImage error message fix during sync',
+    status: 'Merged, March 2026',
+    kind: 'Merged PR',
+    cta: 'Open merged PR',
+    url: 'https://github.com/withastro/astro/pull/16017',
+  },
+  {
     label: 'commaai/opendbc - CI cache optimization',
     status: 'Merged on January 27, 2026',
     kind: 'Merged PR',
@@ -606,7 +613,7 @@ export const githubSection = {
     'Public repositories pulled from my actual GitHub profile, showing current product work, AI tooling, and experiments I build in the open.',
   stats: [
     { label: 'Contributions this year', value: '176' },
-    { label: 'PRs merged', value: '6' },
+    { label: 'PRs merged', value: '7' },
     { label: 'Repositories', value: '26' },
     { label: 'Stars earned', value: '1' },
   ],
