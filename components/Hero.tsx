@@ -17,9 +17,10 @@ export default function Hero() {
             <p className="section-kicker">Software engineer / full-stack systems / practical AI</p>
             <h1 className="hero-title">Felmon Fekadu</h1>
             <p className="hero-summary">
-              Computer Science student building product-grade software, real-time tools, and AI
-              features with live demos, accepted upstream work, and a bias toward proof over
-              inflated claims.
+              Full-stack software developer in Calgary building product systems with TypeScript,
+              Python, auth, payments, real-time workflows, and AI features. Public proof includes
+              live products, inspectable repositories, and upstream fixes accepted by major
+              open-source projects.
             </p>
 
             <div className="hero-actions">
@@ -67,8 +68,8 @@ export default function Hero() {
               <p className="section-kicker">Current Focus</p>
               <h2 className="rail-title">Full-time roles where engineering quality is visible in the work.</h2>
               <p className="rail-copy">
-                Looking for teams that ship real software, care about review quality, and expect
-                product thinking from engineers.
+                Open to teams that ship real software, care about review quality, and value
+                engineers who can connect implementation detail to product outcomes.
               </p>
             </div>
 

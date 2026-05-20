@@ -35,8 +35,10 @@ export default function About() {
 
             <div className="body-grid reveal-up delay-1">
               <p className="body-copy">
-                Recent work includes an AI-assisted assessment platform, a real-time collaborative
-                editor, and upstream fixes across TypeScript and Rust open-source projects.
+                Recent work includes TypeJung, a paid assessment product with auth, Stripe, saved
+                results, email offers, and AI-assisted reports; a real-time collaborative editor;
+                local-first document QA; and upstream fixes across TypeScript and Python
+                open-source projects.
               </p>
               <p className="body-copy">
                 I am looking for full-time engineering work where I can contribute quickly, absorb

@@ -10,10 +10,10 @@ export const navLinks = [
 ]
 
 export const roles = [
-  'Full-Stack Engineer',
-  'OSS Contributor',
-  'AI Tooling Builder',
-  'Product Engineer',
+  'Full-Stack Product Engineer',
+  'AI Systems Builder',
+  'Developer Tools Contributor',
+  'Open-Source Engineer',
 ]
 
 export const socialLinks = [
@@ -24,7 +24,7 @@ export const socialLinks = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/felmon-fekadu/',
+    url: 'https://www.linkedin.com/in/felmonfekadu/',
     icon: 'linkedin',
   },
   {
@@ -37,11 +37,11 @@ export const socialLinks = [
 export const resumeLinks: { name: string; url: string }[] = []
 
 export const aboutHighlights = [
-  'Full-Stack Web Development',
-  'Model-Powered Product Development',
-  'Accepted & Submitted OSS Work',
-  'Real-Time Systems',
-  'Testing & CI/CD',
+  'Auth, Payments, and Product Flows',
+  'AI-Assisted Product Features',
+  'Developer Tools and Testing Infrastructure',
+  'Real-Time Collaboration Systems',
+  'Accepted Upstream OSS Work',
 ]
 
 export const skills = [
@@ -74,10 +74,10 @@ export const skills = [
 export const projects = [
   {
     title: 'TypeJung',
-    tagline: 'Live full-stack assessment product with paid tiers and AI-generated reports.',
+    tagline: 'Live assessment product with auth, Stripe, email offers, and AI-assisted reports.',
     description:
-      'Live full-stack assessment product with a 40-question engine, AI-generated insights, authentication, and Stripe-based tiered monetization.',
-    tech: ['React', 'TypeScript', 'Express', 'Supabase', 'Stripe', 'Gemini'],
+      'Live full-stack assessment product with a 42-question Jungian scoring engine, saved results, authentication, private email offers, Stripe checkout, and AI-assisted paid reports.',
+    tech: ['React', 'TypeScript', 'Express', 'Supabase', 'Stripe', 'AI reports'],
     category: 'Flagship Product',
     image: '/images/project-jungian.png',
     github: 'https://github.com/felmonon/jungian-typology-assessment',
@@ -85,24 +85,25 @@ export const projects = [
     featured: true,
     caseStudy: true,
     problem:
-      'A personality assessment can get attention, but turning it into a product requires more than questions. It needs authentication, payments, report generation, and a flow that makes the value obvious.',
+      'A personality assessment can get attention, but turning it into a product requires more than questions. It needs trust, authentication, payments, email follow-up, report generation, and a flow that makes the upgrade value obvious.',
     solution:
-      'Built a complete assessment product with a multi-step questionnaire, gated reports, account handling, and AI-generated insights that sit inside a paid product flow instead of a demo.',
+      'Built a complete assessment product with a multi-step questionnaire, gated reports, account handling, discount email capture, and AI-assisted insights inside a paid product flow instead of a demo.',
     architecture:
-      'React and TypeScript on the frontend, Express on the backend, Supabase for auth and persistence, Stripe for billing, and Gemini-powered report generation.',
+      'React and TypeScript on the frontend, Express on the backend, Supabase for auth and persistence, Stripe for billing, and an AI-assisted report generation layer.',
     constraints:
       'The system had to keep the experience readable while handling monetization, report generation, and account state without making the product feel fragile.',
     outcome:
-      'Shipped publicly at typejung.com with tiered monetization, public source code, and inspectable product behavior.',
+      'Shipped publicly at typejung.com with tiered monetization, public source code, and a validated first paid customer flow.',
     imageGradient: 'linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%)',
     ctaLabel: 'Open live product',
     secondaryHref: 'https://github.com/felmonon/jungian-typology-assessment',
     secondaryLabel: 'Inspect source',
     proofItems: [
       'Live product at typejung.com',
-      '40-question assessment engine',
-      'Supabase auth, persistence, and Stripe billing',
-      'Gemini-generated reports inside paid product flow',
+      '42-question assessment engine',
+      'Supabase auth, persistence, email offers, and Stripe billing',
+      'AI-assisted reports inside paid product flow',
+      'First real paid upgrade validated end to end',
     ],
   },
   {
@@ -391,7 +392,7 @@ export const stats = [
 export const heroSection = {
   eyebrow: 'Full-stack software engineer',
   summary:
-    'I build full-stack products with authentication, payments, real-time collaboration, and AI-powered workflows. The strongest signal is public proof you can inspect: live apps, public repositories, and seven merged PRs across OpenAI, MSW, Astro, and comma.ai.',
+    'I build full-stack products with authentication, payments, real-time collaboration, and AI-assisted workflows. The strongest signal is public proof you can inspect: live apps, public repositories, and seven merged PRs across OpenAI, MSW, Astro, and comma.ai.',
   stackFocus: ['React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'AI / LLM'],
   architectureNodes: [
     { label: 'Frontend', color: '#7FB38A', delay: 0, indent: 0 },
@@ -434,9 +435,9 @@ export const aboutSection = {
   ],
   title: 'Building systems that solve real problems',
   paragraphs: [
-    'I\u2019m Felmon Fekadu, a software engineer in Calgary building full-stack products, real-time systems, and AI-powered workflows. I ship code with clear interfaces, tested behavior, and public proof.',
-    'My strongest evidence is public and verifiable: shipped products at typejung.com and collab-editor-sand.vercel.app, a local-first RAG system in docagent-studio, and seven merged pull requests across OpenAI, MSW, Astro, and comma.ai.',
-    'I\u2019m looking for engineering roles where product judgment and technical discipline both matter \u2014 teams shipping real software with high ownership and clear review standards.',
+    'I\u2019m Felmon Fekadu, a software developer in Calgary building full-stack products, real-time systems, and AI-assisted workflows. I ship code with clear interfaces, tested behavior, and public proof.',
+    'My strongest evidence is public and verifiable: TypeJung at typejung.com with auth, Stripe, email offers, and a real paid upgrade; Collab Editor with live sync and persistence; DocAgent Studio with local-first retrieval and citations; and seven merged pull requests across OpenAI, MSW, Astro, and comma.ai.',
+    'I\u2019m looking for engineering roles where product judgment and technical discipline both matter: teams shipping real software with high ownership, clear review standards, and room to grow into harder systems work.',
   ],
   principles: [
     ['Clear interfaces', 'Make the product understandable before making it clever.'],
@@ -510,7 +511,7 @@ export const journeyTimeline = [
     type: 'project',
     title: 'Shipped 3 products: TypeJung, Collab Editor, DocAgent Studio',
     description:
-      'Full-stack products with authentication, payments, real-time collaboration, and local-first AI-powered document QA.',
+      'Full-stack products with authentication, payments, email offers, real-time collaboration, and local-first AI-powered document QA.',
   },
   {
     year: '2025-2026',

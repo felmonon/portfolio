@@ -2,7 +2,7 @@
 
 Engineering portfolio site built to present case-study style project work, open-source contributions, and tailored resume variants in one place.
 
-**Live site:** [felmonfekadu.com](https://www.felmonfekadu.com/)
+**Live site:** [felmon.tech](https://felmon.tech)
 
 ![Felmon Fekadu portfolio preview](public/images/felmon-portrait.jpg)
 
