@@ -89,7 +89,7 @@ const heroProjects = caseStudyProjects.slice(0, 2)
 const heroSignals = [
   { value: '4', label: 'shipped products' },
   { value: '7', label: 'merged PRs' },
-  { value: '26', label: 'public repos' },
+  { value: '36', label: 'public repos' },
 ]
 const highlightedRepos = githubSection.repoGroups
   .flatMap((group) =>
