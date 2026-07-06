@@ -197,9 +197,7 @@ export const projects = [
     secondaryHref: 'https://github.com/marketplace/actions/msw-inspector',
     secondaryLabel: 'GitHub Marketplace',
     proofItems: [
-      'Published to npm as msw-inspector-cli',
-      'GitHub Action live on Marketplace',
-      'AST-based scanning with ts-morph',
+      'Published to npm and GitHub Marketplace with AST scanning',
       'TypeJung dogfood run: 39 API calls, 0 handlers, 39 unmocked endpoints',
       'Mirror dogfood run: 7 API calls, 0 handlers, 7 unmocked endpoints',
       'MSW browser REST slice: 66 handlers, 66 stale handlers in a narrowed scan',
