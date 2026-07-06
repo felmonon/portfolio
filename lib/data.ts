@@ -174,7 +174,7 @@ export const projects = [
     title: 'msw-inspector',
     tagline: 'CLI and GitHub Action that finds gaps in MSW mock coverage.',
     description:
-      'CLI and GitHub Action that scans MSW request handlers and actual API calls in your codebase, compares them, and reports unmocked endpoints and stale mocks. Published to npm and GitHub Marketplace.',
+      'Open-source CLI and GitHub Action that scans MSW request handlers and real API call sites, compares them, and reports unmocked endpoints and stale mocks. Published to npm and GitHub Marketplace.',
     tech: ['TypeScript', 'AST Analysis', 'CLI', 'GitHub Actions', 'npm'],
     category: 'Developer Tool',
     image: '/images/project-jungian.png',
@@ -189,9 +189,9 @@ export const projects = [
     architecture:
       'TypeScript with ts-morph for AST parsing, commander for CLI, fast-glob for file discovery. Separate GitHub Action repo with self-contained runtime for Marketplace distribution.',
     constraints:
-      'The scanner must handle multiple API call patterns (fetch, axios, axios.create) and MSW handler styles (http.*, rest.*) without false positives. Published as a real npm package with semver.',
+      'The scanner must handle multiple API call patterns (fetch, axios, axios.create) and MSW handler styles (http.*, rest.*) without guessing dynamic runtime behavior.',
     outcome:
-      'Published to npm as msw-inspector-cli, GitHub Action live on Marketplace. Dogfooded on real repos including typejung.com (found 24 unmocked endpoints).',
+      'Published to npm as msw-inspector-cli and shipped a GitHub Action on Marketplace. Dogfooded on TypeJung, Mirror, and the MSW browser REST test slice to show both unmocked endpoints and stale-handler drift.',
     imageGradient: 'linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%)',
     ctaLabel: 'View on npm',
     secondaryHref: 'https://github.com/marketplace/actions/msw-inspector',
@@ -200,7 +200,9 @@ export const projects = [
       'Published to npm as msw-inspector-cli',
       'GitHub Action live on Marketplace',
       'AST-based scanning with ts-morph',
-      'Dogfooded on real repos — found 24 unmocked endpoints in typejung.com',
+      'TypeJung dogfood run: 39 API calls, 0 handlers, 39 unmocked endpoints',
+      'Mirror dogfood run: 7 API calls, 0 handlers, 7 unmocked endpoints',
+      'MSW browser REST slice: 66 handlers, 66 stale handlers in a narrowed scan',
     ],
   },
   {
