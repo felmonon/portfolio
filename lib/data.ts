@@ -179,7 +179,7 @@ export const projects = [
     category: 'Developer Tool',
     image: '/images/project-jungian.png',
     github: 'https://github.com/felmonon/msw-inspector',
-    live: 'https://www.npmjs.com/package/msw-inspector-cli',
+    live: '/case-studies/msw-inspector',
     featured: true,
     caseStudy: true,
     problem:
@@ -193,7 +193,7 @@ export const projects = [
     outcome:
       'Published to npm as msw-inspector-cli and shipped a GitHub Action on Marketplace. Dogfooded on TypeJung, Mirror, and the MSW browser REST test slice to show both unmocked endpoints and stale-handler drift.',
     imageGradient: 'linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%)',
-    ctaLabel: 'View on npm',
+    ctaLabel: 'Read case study',
     secondaryHref: 'https://github.com/marketplace/actions/msw-inspector',
     secondaryLabel: 'GitHub Marketplace',
     proofItems: [

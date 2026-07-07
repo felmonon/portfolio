@@ -344,7 +344,7 @@ function CaseStudyBlock({
           </div>
 
           <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-[#232326] pt-5">
-            <PrimaryButton href={href} newTab showArrow className="px-5 py-2.5">
+            <PrimaryButton href={href} newTab={!href.startsWith('/')} showArrow className="px-5 py-2.5">
               {ctaLabel}
             </PrimaryButton>
 
