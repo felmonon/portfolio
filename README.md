@@ -14,7 +14,7 @@ Engineering portfolio site built to present case-study style project work, open-
 |---|---|
 | **[DocAgent Studio](https://github.com/FelmonFekadu/docagent-studio)** | Local-first RAG engine with verifiable citations, hybrid retrieval, and GraphRAG-style index |
 | **[Jungian Typology Assessment](https://github.com/FelmonFekadu/jungian-typology-assessment)** | Full-stack assessment product with Stripe monetization (3-tier pricing), Supabase auth, and Gemini-powered analysis |
-| **[msw-inspector](https://github.com/felmonon/msw-inspector)** | Open-source TypeScript CLI and GitHub Marketplace Action for finding missing and stale MSW API mocks |
+| **[msw-inspector](docs/msw-inspector-case-study.md)** | Open-source TypeScript CLI and GitHub Marketplace Action for finding missing and stale MSW API mocks ([repo](https://github.com/felmonon/msw-inspector)) |
 | **[CompetencyArcEngine](https://github.com/FelmonFekadu/CompetencyArcEngine)** | Hierarchical multi-agent system with confidence-based routing, homeostasis loops, and morphogenetic memory |
 | **[NeuroFlow](https://github.com/FelmonFekadu/neuroflow)** | ADHD-specific productivity app — an external prefrontal cortex with AI task breakdown |
 
@@ -32,7 +32,7 @@ Engineering portfolio site built to present case-study style project work, open-
 
 - **[DocAgent Studio](https://github.com/FelmonFekadu/docagent-studio)** — Local-first personal docs assistant (PDF + Notion + Markdown) with citations and MLX LoRA fine-tuning
 - **[Jungian Typology Assessment](https://github.com/FelmonFekadu/jungian-typology-assessment)** — Live psychological assessment product with 40-question engine, Stripe billing, and Gemini-powered analysis
-- **[msw-inspector](https://github.com/felmonon/msw-inspector)** — Open-source MSW coverage CLI published to npm with a companion GitHub Marketplace Action
+- **[msw-inspector](docs/msw-inspector-case-study.md)** — Open-source MSW coverage CLI published to npm with a companion GitHub Marketplace Action ([repo](https://github.com/felmonon/msw-inspector), [npm](https://www.npmjs.com/package/msw-inspector-cli))
 - **[CompetencyArcEngine](https://github.com/FelmonFekadu/CompetencyArcEngine)** — Hierarchical multi-agent system inspired by Michael Levin's competency research
 - **[NeuroFlow](https://github.com/FelmonFekadu/neuroflow)** — ADHD-specific productivity app built with Next.js 16, React 19, Supabase, and Zustand
 - **[AI Speech Coach](https://github.com/FelmonFekadu/ai-speech-coach)** — Real-time AI speech coaching with live video feedback (Tavus CVI, Claude, Next.js)
