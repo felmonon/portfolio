@@ -9,41 +9,39 @@ vi.mock('next/font/google', () => ({
 
 import ProofPage from './page'
 
-describe('Proof of work page', () => {
-  it('renders the three evidence packages and employer doubt matrix', () => {
+describe('Selected work page', () => {
+  it('renders three factual engineering case studies', () => {
     render(<ProofPage />)
 
-    expect(screen.getByRole('heading', { name: /Evidence,\s*not adjectives/i })).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: /Astro: moving from accepted fixes/i })
+      screen.getByRole('heading', { name: /Selected engineering work/i })
     ).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /^Astro$/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /^MSW Inspector$/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /^TypeJung$/i })).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: /MSW Inspector: turning an API-testing gap/i })
+      screen.getByRole('heading', { name: /Developer tools, platform work, or applied AI/i })
     ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /TypeJung: building the product around/i })
-    ).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /evidence is organized around hiring risk/i })).toBeInTheDocument()
   })
 
-  it('provides inspectable evidence links and a direct contact action', () => {
+  it('links directly to the underlying work and contact information', () => {
     render(<ProofPage />)
 
-    expect(screen.getByRole('link', { name: /Merged language-server PR/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /Merged language-server fix/i })).toHaveAttribute(
       'href',
       'https://github.com/withastro/astro/pull/15927'
     )
-    expect(screen.getByRole('link', { name: /Inspect the repository/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /^Repository$/i })).toHaveAttribute(
       'href',
       'https://github.com/felmonon/msw-inspector'
     )
-    expect(screen.getByRole('link', { name: /Open the live product/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /Live product/i })).toHaveAttribute(
       'href',
       'https://typejung.com'
     )
-    expect(screen.getByRole('link', { name: /Tell me the problem you need solved/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /Email Felmon/i })).toHaveAttribute(
       'href',
-      expect.stringContaining('mailto:hello@felmon.tech')
+      'mailto:hello@felmon.tech'
     )
   })
 })

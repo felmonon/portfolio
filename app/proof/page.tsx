@@ -1,278 +1,190 @@
 import type { Metadata } from 'next'
-import { ArrowLeft, ArrowUpRight, CheckCircle2, GitPullRequest, Mail } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import { JetBrains_Mono, Source_Serif_4, Space_Grotesk } from 'next/font/google'
 import styles from './proof.module.css'
 
-const sans = Space_Grotesk({ subsets: ['latin'], variable: '--font-proof-sans' })
-const serif = Source_Serif_4({ subsets: ['latin'], variable: '--font-proof-serif' })
-const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-proof-mono' })
+const sans = Space_Grotesk({ subsets: ['latin'], variable: '--font-work-sans' })
+const serif = Source_Serif_4({ subsets: ['latin'], variable: '--font-work-serif' })
+const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-work-mono' })
 
 export const metadata: Metadata = {
-  title: 'Proof of Work | Felmon Fekadu',
-  description:
-    'Inspectable evidence from Felmon Fekadu: maintainer-reviewed open-source work, a developer tool with outside contributors, and a full-stack AI product with paying users.',
+  title: 'Selected Work | Felmon Fekadu',
+  description: 'Selected engineering work by Felmon Fekadu: Astro, MSW Inspector, and TypeJung.',
   openGraph: {
-    title: 'Proof of Work | Felmon Fekadu',
-    description: 'Real products, merged pull requests, public repositories, and measurable outcomes.',
+    title: 'Selected Work | Felmon Fekadu',
+    description: 'Open-source contributions, developer tooling, and a shipped full-stack product.',
     url: 'https://felmon.tech/proof',
     type: 'website',
   },
 }
 
-const metrics = [
-  { value: '14', label: 'upstream PRs accepted', note: 'Across 6 open-source organizations' },
-  { value: '5/5', label: 'Astro PRs merged', note: 'A repeated maintainer-reviewed signal' },
-  { value: '3', label: 'proof packages', note: 'Framework, developer tool, and paid product' },
-  { value: '6', label: 'paying TypeJung users', note: 'Early product snapshot, June 29, 2026' },
-]
-
-const caseStudies = [
+const projects = [
   {
-    number: '01',
-    eyebrow: 'Framework engineering · open source',
-    title: 'Astro: moving from accepted fixes to sustained ecosystem work',
-    thesis:
-      'Five accepted Astro pull requests created a stronger signal than a generic framework claim. I am now compounding that signal through reviews, issue triage, and user support.',
-    evidence: [
-      '5 of 5 submitted Astro PRs merged',
-      'L1 Contributor role in the Astro community',
-      'First weekly loop: two PR reviews and one issue triage contribution',
-      'A support diagnosis independently validated by a Zed staff engineer',
+    index: '01',
+    title: 'Astro',
+    type: 'Open-source contribution record',
+    period: '2026',
+    summary:
+      'I have had five pull requests merged into Astro, mainly around TypeScript and developer experience. I now also contribute through issue triage, pull-request review, and community support.',
+    details: [
+      ['Work', 'Language-server behavior, error handling, TypeScript-related fixes, reviews, and issue triage.'],
+      ['Approach', 'Reproduce the problem, reduce the scope, add or request the right test, and explain the tradeoff clearly.'],
+      ['Current focus', 'Sustained weekly contributions toward the Astro maintainer path.'],
     ],
-    decision:
-      'I chose Astro as my primary maintainer track because the feedback loop is real: maintainers accept focused fixes, the project has a documented governance ladder, and my TypeScript/DX work maps directly to user needs.',
-    result:
-      'A visible contribution record that demonstrates technical judgment, review quality, and community collaboration, not just isolated coding.',
+    note:
+      'A recent support diagnosis was confirmed and refined by a Zed staff engineer. That interaction is a useful example of how I work in public: investigate carefully, share the evidence, and update the answer when better information appears.',
     links: [
-      { label: 'Merged language-server PR', href: 'https://github.com/withastro/astro/pull/15927' },
+      { label: 'Merged language-server fix', href: 'https://github.com/withastro/astro/pull/15927' },
       { label: 'GitHub profile', href: 'https://github.com/felmonon' },
     ],
   },
   {
-    number: '02',
-    eyebrow: 'Developer tools · testing infrastructure',
-    title: 'MSW Inspector: turning an API-testing gap into a maintained tool',
-    thesis:
-      'MSW handlers drift away from real API usage. MSW Inspector parses both sides, compares coverage, and reports unmocked endpoints and stale handlers in local development and CI.',
-    evidence: [
-      'AST-driven TypeScript CLI and GitHub Action',
-      'Public Marketplace integration and reproducible repository',
-      'Outside contributors now opening and landing pull requests',
-      'Seven public roadmap issues spanning product depth, DX, and reliability',
+    index: '02',
+    title: 'MSW Inspector',
+    type: 'Developer tool I maintain',
+    period: '2026',
+    summary:
+      'MSW Inspector is a TypeScript CLI and GitHub Action that compares Mock Service Worker handlers with the API calls in a codebase. It reports unmocked endpoints and handlers that may have gone stale.',
+    details: [
+      ['Work', 'AST analysis with ts-morph, command-line UX, CI integration, tests, releases, and documentation.'],
+      ['Why ASTs', 'The tool needs to understand fetch, Axios, and handler registrations as code. Text matching would create too many false positives.'],
+      ['Current status', 'Public repository, Marketplace action, outside contributors, and a documented product roadmap.'],
     ],
-    decision:
-      'I used ts-morph instead of fragile text matching so the tool can reason about fetch, Axios, and handler registrations as code. I also built the maintainer workflow around small issues, review feedback, and CI evidence.',
-    result:
-      'The project now proves product ownership, parser design, release engineering, CI debugging, and contributor management in one inspectable system.',
+    note:
+      'Maintaining the project has included reviewing contributor pull requests, diagnosing cross-platform CI failures, planning narrowly scoped issues, and separating real failures from theoretical risk.',
     links: [
-      { label: 'Inspect the repository', href: 'https://github.com/felmonon/msw-inspector' },
+      { label: 'Repository', href: 'https://github.com/felmonon/msw-inspector' },
       { label: 'GitHub Marketplace', href: 'https://github.com/marketplace/actions/msw-inspector' },
     ],
   },
   {
-    number: '03',
-    eyebrow: 'Full-stack AI product · paying users',
-    title: 'TypeJung: building the product around the model output',
-    thesis:
-      'The AI report is only one part of the product. The real system includes assessment state, authentication, persistence, billing, email capture, and a workflow that turns an answer into a useful paid result.',
-    evidence: [
-      'Live product at typejung.com',
-      '22 registered users and 6 paying users in the June 29 snapshot',
-      'CA$74 in early revenue',
-      'React, TypeScript, Express, Supabase, Stripe, and Gemini in one production flow',
+    index: '03',
+    title: 'TypeJung',
+    type: 'Full-stack product',
+    period: '2025–2026',
+    summary:
+      'TypeJung is a personality assessment product built with React, TypeScript, Express, Supabase, Stripe, and Gemini. The system includes the assessment, account state, persisted results, billing, and AI-assisted reports.',
+    details: [
+      ['Work', 'Product design, frontend, API, authentication, payments, persistence, email capture, and report generation.'],
+      ['Early result', '22 registered users, 6 paying users, and CA$74 in revenue in the June 29, 2026 snapshot.'],
+      ['Current focus', 'Improving acquisition, social proof, and the sharing loop after a user receives a result.'],
     ],
-    decision:
-      'I treated the model as a bounded capability inside a product rather than the entire product. Account state, payment state, report generation, and recovery paths had to agree.',
-    result:
-      'A shipped AI application with real customers and measurable behavior, giving employers evidence of product judgment as well as implementation ability.',
+    note:
+      'The main lesson was that the model output is not the product. The surrounding workflow has to handle payment state, account state, report generation, and recovery paths reliably.',
     links: [
-      { label: 'Open the live product', href: 'https://typejung.com' },
-      { label: 'Inspect the source', href: 'https://github.com/felmonon/jungian-typology-assessment' },
+      { label: 'Live product', href: 'https://typejung.com' },
+      { label: 'Source', href: 'https://github.com/felmonon/jungian-typology-assessment' },
     ],
   },
 ]
 
-const doubtMatrix = [
-  ['Can he ship?', 'Live products, deployed systems, and accepted pull requests'],
-  ['Can he debug?', 'Reproductions, root-cause analysis, tests, CI diagnosis, and focused fixes'],
-  ['Can he prioritize?', 'A documented Astro focus, public roadmaps, and explicit tradeoffs'],
-  ['Can he collaborate?', 'Maintainer reviews, issue triage, contributor feedback, and community support'],
-  ['Does he understand users?', 'A paid TypeJung funnel and developer-tool workflows built around real friction'],
-  ['Can he learn fast?', 'Accepted work across OpenAI, Astro, MSW, Google, and comma.ai codebases'],
-]
-
-const principles = [
-  ['Show the work', 'Replace capability adjectives with a live artifact, source link, or accepted change.'],
-  ['Own the outcome', 'Carry the problem through product decisions, implementation, verification, and communication.'],
-  ['Make review easy', 'Package evidence so a technical manager can understand it in minutes.'],
-]
-
-function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+function TextLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a className={styles.externalLink} href={href} target="_blank" rel="noopener noreferrer">
-      <span>{children}</span>
-      <ArrowUpRight aria-hidden="true" size={16} />
+    <a className={styles.textLink} href={href} target="_blank" rel="noopener noreferrer">
+      {children}
+      <ArrowUpRight aria-hidden="true" size={14} />
     </a>
   )
 }
 
-export default function ProofPage() {
+export default function SelectedWorkPage() {
   return (
     <main className={`${styles.page} ${sans.variable} ${serif.variable} ${mono.variable}`}>
-      <nav className={styles.nav} aria-label="Proof of work navigation">
-        <a className={styles.backLink} href="/">
-          <ArrowLeft aria-hidden="true" size={16} />
+      <header className={styles.header}>
+        <a className={styles.back} href="/">
+          <ArrowLeft aria-hidden="true" size={15} />
           Portfolio
         </a>
-        <div className={styles.navMeta}>
-          <span className={styles.statusDot} aria-hidden="true" />
-          Open to engineering roles
-        </div>
-        <a className={styles.navContact} href="mailto:hello@felmon.tech">
-          Contact
-        </a>
-      </nav>
+        <nav aria-label="Contact links" className={styles.nav}>
+          <a href="https://github.com/felmonon" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/felmonfekadu/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href="mailto:hello@felmon.tech">Email</a>
+        </nav>
+      </header>
 
-      <section className={styles.hero} aria-labelledby="proof-title">
-        <p className={styles.kicker}>Proof of work / 2026</p>
-        <div className={styles.heroGrid}>
+      <section className={styles.intro} aria-labelledby="page-title">
+        <p className={styles.eyebrow}>Felmon Fekadu · Selected work</p>
+        <h1 id="page-title">Selected engineering work.</h1>
+        <p className={styles.introCopy}>
+          Three projects that best represent the work I want to do next: developer tools, open-source
+          systems, and applied AI products. Across these projects and other upstream contributions, I
+          have had 14 pull requests accepted across six organizations.
+        </p>
+        <dl className={styles.profileMeta}>
           <div>
-            <h1 id="proof-title" className={styles.heroTitle}>
-              Evidence,
-              <br />
-              not adjectives.
-            </h1>
+            <dt>Based in</dt>
+            <dd>Calgary, Alberta</dd>
           </div>
-          <div className={styles.heroCopyWrap}>
-            <p className={styles.heroCopy}>
-              I build full-stack products and developer tools, then make the work inspectable. This
-              page compresses my strongest evidence into three proof packages a technical manager can
-              review in under five minutes.
-            </p>
-            <a className={styles.primaryCta} href="mailto:hello@felmon.tech?subject=A%20problem%20worth%20solving">
-              <Mail aria-hidden="true" size={18} />
-              Tell me the problem you need solved
-            </a>
+          <div>
+            <dt>Primary stack</dt>
+            <dd>TypeScript, Python, React, Node.js</dd>
           </div>
-        </div>
+          <div>
+            <dt>Looking for</dt>
+            <dd>Full-time software engineering roles</dd>
+          </div>
+        </dl>
       </section>
 
-      <section className={styles.metrics} aria-label="Verified career evidence">
-        {metrics.map((metric) => (
-          <article className={styles.metricCard} key={metric.label}>
-            <strong>{metric.value}</strong>
-            <span>{metric.label}</span>
-            <p>{metric.note}</p>
+      <section className={styles.work} aria-label="Selected engineering projects">
+        {projects.map((project) => (
+          <article className={styles.project} key={project.title}>
+            <aside className={styles.projectMeta}>
+              <span>{project.index}</span>
+              <p>{project.type}</p>
+              <p>{project.period}</p>
+            </aside>
+
+            <div className={styles.projectBody}>
+              <h2>{project.title}</h2>
+              <p className={styles.summary}>{project.summary}</p>
+
+              <dl className={styles.details}>
+                {project.details.map(([label, value]) => (
+                  <div key={label}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <p className={styles.note}>{project.note}</p>
+
+              <div className={styles.links}>
+                {project.links.map((link) => (
+                  <TextLink href={link.href} key={link.href}>
+                    {link.label}
+                  </TextLink>
+                ))}
+              </div>
+            </div>
           </article>
         ))}
       </section>
 
-      <section className={styles.caseStudySection} aria-labelledby="case-studies-title">
-        <div className={styles.sectionIntro}>
-          <p className={styles.kicker}>Three proof packages</p>
-          <h2 id="case-studies-title">Work selected for signal, not volume.</h2>
-          <p>
-            Each case shows a different risk an employer needs to resolve: framework depth,
-            developer-tool ownership, and full-stack product execution.
-          </p>
-        </div>
-
-        <div className={styles.caseStudyList}>
-          {caseStudies.map((study) => (
-            <article className={styles.caseStudy} key={study.number}>
-              <div className={styles.caseIndex} aria-hidden="true">
-                {study.number}
-              </div>
-              <div className={styles.caseBody}>
-                <p className={styles.caseEyebrow}>{study.eyebrow}</p>
-                <h3>{study.title}</h3>
-                <p className={styles.caseThesis}>{study.thesis}</p>
-
-                <div className={styles.caseGrid}>
-                  <div>
-                    <p className={styles.label}>Inspectable evidence</p>
-                    <ul className={styles.evidenceList}>
-                      {study.evidence.map((item) => (
-                        <li key={item}>
-                          <CheckCircle2 aria-hidden="true" size={17} />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className={styles.decisionBlock}>
-                    <p className={styles.label}>Decision</p>
-                    <p>{study.decision}</p>
-                    <p className={styles.label}>Result</p>
-                    <p>{study.result}</p>
-                  </div>
-                </div>
-
-                <div className={styles.caseLinks}>
-                  {study.links.map((link) => (
-                    <ExternalLink href={link.href} key={link.href}>
-                      {link.label}
-                    </ExternalLink>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.matrixSection} aria-labelledby="matrix-title">
-        <div className={styles.sectionIntroCompact}>
-          <p className={styles.kicker}>Employer doubt matrix</p>
-          <h2 id="matrix-title">The evidence is organized around hiring risk.</h2>
-        </div>
-        <div className={styles.matrix} role="list">
-          {doubtMatrix.map(([doubt, evidence]) => (
-            <div className={styles.matrixRow} role="listitem" key={doubt}>
-              <div className={styles.matrixQuestion}>
-                <GitPullRequest aria-hidden="true" size={17} />
-                {doubt}
-              </div>
-              <p>{evidence}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.principlesSection} aria-labelledby="principles-title">
-        <div className={styles.sectionIntroCompact}>
-          <p className={styles.kicker}>How I work</p>
-          <h2 id="principles-title">Three operating principles.</h2>
-        </div>
-        <div className={styles.principlesGrid}>
-          {principles.map(([title, body], index) => (
-            <article className={styles.principleCard} key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.finalCta} aria-labelledby="final-cta-title">
-        <p className={styles.kicker}>A concrete next step</p>
-        <h2 id="final-cta-title">Give me one real problem to investigate.</h2>
+      <section className={styles.next} aria-labelledby="next-title">
+        <p className={styles.eyebrow}>Next role</p>
+        <h2 id="next-title">Developer tools, platform work, or applied AI.</h2>
         <p>
-          I will ask the right questions, build or diagnose something useful, and communicate the
-          tradeoffs clearly.
+          I am looking for a team with strong review standards, useful problems, and enough ownership
+          to follow work from investigation through release. Canada-based or remote roles are the best
+          fit.
         </p>
-        <a className={styles.primaryCta} href="mailto:hello@felmon.tech?subject=A%20problem%20worth%20solving">
-          Start a conversation
-          <ArrowUpRight aria-hidden="true" size={18} />
-        </a>
+        <div className={styles.links}>
+          <a className={styles.contactLink} href="mailto:hello@felmon.tech">
+            Email Felmon
+          </a>
+          <TextLink href="https://github.com/felmonon">Review GitHub</TextLink>
+        </div>
       </section>
 
       <footer className={styles.footer}>
-        <span>Felmon Fekadu · Calgary, Alberta</span>
-        <a href="https://github.com/felmonon" target="_blank" rel="noopener noreferrer">
-          github.com/felmonon
-        </a>
+        <span>Updated July 2026</span>
+        <span>felmon.tech</span>
       </footer>
     </main>
   )
