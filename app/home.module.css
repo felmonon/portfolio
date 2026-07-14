@@ -8,6 +8,7 @@
   --line-dark: #a8a59c;
   --accent: #225c50;
   --accent-dark: #173f37;
+  --content-width: 70rem;
   min-height: 100vh;
   background: var(--paper);
   color: var(--ink);
@@ -28,7 +29,7 @@
 .about,
 .contact,
 .footer {
-  width: min(calc(100% - 3rem), 70rem);
+  width: min(calc(100% - 3rem), var(--content-width));
   margin-inline: auto;
 }
 
@@ -88,7 +89,7 @@
 }
 
 .hero {
-  padding-block: clamp(5rem, 11vw, 9rem) clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(4.5rem, 9vw, 7.5rem) clamp(3.5rem, 6vw, 5.5rem);
 }
 
 .eyebrow,
@@ -251,15 +252,15 @@
 .about,
 .contact {
   scroll-margin-top: 2rem;
-  padding-block: clamp(5rem, 10vw, 8rem);
+  padding-block: clamp(4.5rem, 7vw, 6.5rem);
 }
 
 .sectionIntro {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.65fr);
-  gap: 2rem 5rem;
+  gap: 2rem 4rem;
   align-items: end;
-  padding-bottom: 3rem;
+  padding-bottom: 2.5rem;
 }
 
 .sectionIntro .eyebrow {
@@ -291,7 +292,7 @@
   display: grid;
   grid-template-columns: 9rem minmax(0, 1fr);
   gap: 2rem;
-  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+  padding-block: clamp(3rem, 5vw, 4.5rem);
   border-bottom: 1px solid var(--line-dark);
 }
 
@@ -475,6 +476,7 @@
 }
 
 .contact {
+  padding-bottom: clamp(3.5rem, 5vw, 4.5rem);
   border-top: 1px solid var(--ink);
 }
 
@@ -491,7 +493,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
-  padding-block: 2rem;
+  padding-block: 1.5rem;
   border-top: 1px solid var(--line);
   color: var(--ink-faint);
   font-family: var(--font-mono), monospace;
@@ -540,7 +542,7 @@
   .about,
   .contact,
   .footer {
-    width: min(calc(100% - 2rem), 70rem);
+    width: min(calc(100% - 2rem), var(--content-width));
   }
 
   .header {
@@ -575,9 +577,12 @@
 
   .section,
   .openSource,
-  .about,
-  .contact {
+  .about {
     padding-block: 2.75rem;
+  }
+
+  .contact {
+    padding-block: 2.75rem 1.75rem;
   }
 
   .sectionIntro {
@@ -647,6 +652,8 @@
 
   .footer {
     flex-direction: column;
+    gap: 0.75rem;
+    padding-block: 1.25rem calc(1.25rem + env(safe-area-inset-bottom));
   }
 }
 

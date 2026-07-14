@@ -2,39 +2,44 @@
 
 ## Comparison target
 
-- Homepage source: `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/design-qa/source-home-matched.png`
-- MSW case study implementation: `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/design-qa/implementation-msw-matched.png`
-- Same-state comparison board: `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/design-qa/comparison-msw-matched.jpg`
-- Mobile implementation: `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/design-qa/implementation-msw-mobile.png`
-- Desktop comparison viewport: 895 × 768 for both source and implementation
-- Mobile emulation: 412 × 823 through Lighthouse
-- State: anonymous visitor, light theme, first viewport
+- Desktop too-wide source (`76rem`): `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/rhythm-qa/balanced-source-76rem-desktop.png`
+- Desktop balanced implementation (`70rem`): `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/rhythm-qa/balanced-implementation-70rem-desktop.png`
+- Desktop side-by-side comparison: `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/rhythm-qa/balanced-comparison-desktop.png`
+- Mobile source: `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/rhythm-qa/source-mobile-full.png`
+- Mobile implementation: `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/rhythm-qa/implementation-mobile-full.png`
+- Mobile bottom comparison: `/Users/felmonfekadu/Developer/projects/felmon.tech/tmp/rhythm-qa/comparison-mobile-bottom.png`
+- Desktop viewport: 1380 × 1000 for both source and implementation
+- Mobile viewport: 390 × 844 for both source and implementation
+- State: anonymous visitor, light theme, full homepage with a focused bottom crop
 
-## Full-view comparison evidence
+## Root cause and measurements
 
-The homepage and case study were captured at the same viewport and placed side by side before judgment. The case study reuses the homepage's warm paper background, near-black ink, restrained green accent, serif display hierarchy, monospace metadata, compact header navigation, thin rules, square actions, and whitespace-led composition. Its longer title wraps intentionally but keeps the same display scale, line height, left edge, and reading measure.
+The mobile bottom gap was not caused by `.page { min-height: 100vh; }`. The page content is taller than the viewport. It came from four stacked values at the end of the document:
 
-## Focused evidence
+- Contact bottom padding: 44px (`2.75rem`)
+- Footer top padding: 32px (`2rem`)
+- Footer row gap: 24px (`1.5rem`)
+- Footer bottom padding: 32px (`2rem`)
 
-- Desktop hero: no collision, clipping, unexpected radius, mismatched border, or cropped content is visible. The top navigation and primary actions preserve the homepage treatment.
-- Mobile hero: the case-study heading, summary, and primary action remain readable in one column with no horizontal overflow. Navigation wraps into a compact row without obscuring the brand.
-- Content structure: semantic headings, lists, links, and the proof table remain present in the accessibility tree. The wide proof table is contained in an explicitly scrollable region on narrow screens.
-- Contrast: the muted token was darkened to `#656860`, giving approximately 4.97:1 contrast against the paper background. Axe reports no automated violations.
+That 132px stack is now 80px before any device safe-area inset: 28px Contact padding, 20px footer top padding, 12px row gap, and 20px footer bottom padding. The measured mobile page height fell from 6460px to 6408px, exactly matching the 52px reduction.
 
-## Required fidelity surfaces
+The desktop rail was tested at both 1024px (`64rem`) and 1216px (`76rem`). User review found the first too inset and the second too wide. The final 1120px (`70rem`) rail sits between them with 130px outer margins at the 1380px comparison viewport. The tighter hero, section, intro, project-row, Contact, and footer rhythm remains unchanged.
 
-- Typography: Source Serif 4, Space Grotesk, and JetBrains Mono are served through `next/font` on both pages.
-- Layout rhythm: both routes use the same content width, border system, spacing scale, and square button language.
-- Color: both routes use the same paper, ink, muted, line, green, and green-soft tokens.
-- Behavior: portfolio navigation, résumé, source, npm, Marketplace, repository, contact, and return links all have valid destinations.
-- Privacy: no personal portrait appears in the UI, favicon, Open Graph card, or metadata.
+## Side-by-side visual judgment
+
+- Desktop: the final rail is visibly more contained than the rejected `76rem` version while avoiding the excessive side space of `64rem`. It preserves the warm paper palette, serif display voice, monospace metadata, green accent, square controls, and rule system. Headings, proof grids, project detail grids, and action rows remain uncropped and aligned.
+- Mobile: Contact remains spacious enough to separate it from About, both full-width actions retain comfortable touch targets, inline links remain distinct, and the footer now follows the actions without the previous empty tail.
+- Responsive behavior: no horizontal overflow, collision, clipping, unexpected radius, font-weight mismatch, border mismatch, or cropped content is visible at either comparison viewport.
+- Accessibility structure: semantic headings, lists, links, navigation, and footer content remain unchanged. The CSS-only refinement does not remove or reorder interactive content.
 
 ## Automated QA
 
-- Vitest: 10 tests passed, including dedicated case-study content and Axe tests.
+- Vitest: 10 tests passed across 5 test files, including homepage and Axe coverage.
 - ESLint: passed.
 - Next.js production build: passed; all application routes prerendered.
-- Local Lighthouse mobile case study: performance 91, accessibility 100, best practices 100, SEO 100, CLS 0.
+- Local production Lighthouse mobile: performance 95, accessibility 100, SEO 100, CLS 0.
+- Local production Lighthouse desktop: performance 100, accessibility 100, SEO 100, CLS 0.
+- Lighthouse best practices is 96 locally because the Vercel Analytics and Speed Insights endpoints return 404 outside Vercel; this is a local-environment artifact, not an application regression.
 
 ## Findings
 
