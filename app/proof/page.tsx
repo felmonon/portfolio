@@ -66,7 +66,7 @@ const projects = [
       'TypeJung is a personality assessment product built with React, TypeScript, Express, Supabase, Stripe, and Gemini. The system includes the assessment, account state, persisted results, billing, and AI-assisted reports.',
     details: [
       ['Work', 'Product design, frontend, API, authentication, payments, persistence, email capture, and report generation.'],
-      ['Early result', '22 registered users, 6 paying users, and CA$74 in revenue in the June 29, 2026 snapshot.'],
+      ['Early result', '22 registered users and 7 paying users as of July 13, 2026; CA$74 in revenue was recorded in the June 29 product snapshot.'],
       ['Current focus', 'Improving acquisition, social proof, and the sharing loop after a user receives a result.'],
     ],
     note:
