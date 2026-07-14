@@ -43,7 +43,6 @@ export default function Home() {
           <nav className={styles.nav} aria-label="Primary navigation">
             <a href="#work">Work</a>
             <a href="#open-source">Open source</a>
-            <a href="/case-studies/upstream-work">Case studies</a>
             <a href="#about">About</a>
             <TrackedLink eventName="resume_download" href={links.resume} download>
               Résumé
@@ -55,13 +54,12 @@ export default function Home() {
 
       <section className={styles.hero} aria-labelledby="hero-title">
         <p className={styles.eyebrow}>
-          Developer-tools & applied-AI reliability engineer · Calgary, Alberta · Open to U.S. relocation
+          Full-stack software engineer · Calgary, Alberta · Open to U.S. relocation
         </p>
         <h1 id="hero-title">Building developer tools and applied AI products.</h1>
         <p className={styles.heroCopy}>
-          I build reliability-first TypeScript and Python systems: maintained developer tooling,
-          deterministic AI evaluation, and full-stack product workflows. My public record includes
-          14 maintainer-merged upstream changes across OpenAI, Astro, MSW, Google, and comma.ai.
+          I ship TypeScript and Python systems, maintain an open-source developer tool, and
+          contribute production fixes to OpenAI, Astro, MSW, Google, and comma.ai.
         </p>
         <ul
           className={styles.heroOrganizations}
@@ -234,17 +232,14 @@ export default function Home() {
                 </li>
               ))}
             </ol>
-            <div className={styles.inlineLinks}>
-              <a href="/case-studies/upstream-work">Read three engineering case studies</a>
-              <TrackedLink
-                className={styles.textAction}
-                eventName="github_click"
-                href={links.github}
-                {...externalProps}
-              >
-                Review the full GitHub record
-              </TrackedLink>
-            </div>
+            <TrackedLink
+              className={styles.textAction}
+              eventName="github_click"
+              href={links.github}
+              {...externalProps}
+            >
+              Review the full GitHub record
+            </TrackedLink>
           </div>
         </div>
       </section>
@@ -273,7 +268,7 @@ export default function Home() {
             </div>
             <div>
               <dt>Target roles</dt>
-              <dd>Developer tools, applied AI reliability, platform; full-stack product engineering</dd>
+              <dd>Full-stack, developer tools, platform, applied AI</dd>
             </div>
             <div>
               <dt>Currently</dt>

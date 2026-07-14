@@ -60,10 +60,6 @@ describe('Home page', () => {
     const caseStudyLink = screen.getByRole('link', { name: /Read case study: MSW Inspector/i })
     expect(caseStudyLink).toHaveAttribute('href', '/case-studies/msw-inspector')
     expect(caseStudyLink).not.toHaveAttribute('target')
-    expect(screen.getByRole('link', { name: /Read three engineering case studies/i })).toHaveAttribute(
-      'href',
-      '/case-studies/upstream-work'
-    )
     expect(screen.getAllByText(/What I learned/i)).toHaveLength(3)
     expect(screen.getAllByText(/Verified July 13, 2026/i)).toHaveLength(2)
   })
