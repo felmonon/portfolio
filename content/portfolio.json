@@ -1,0 +1,138 @@
+{
+  "verification": {
+    "date": "2026-07-13",
+    "label": "Verified July 13, 2026",
+    "maxAgeDays": 45
+  },
+  "links": {
+    "resume": "/resume.pdf",
+    "github": "https://github.com/felmonon",
+    "linkedin": "https://www.linkedin.com/in/felmonfekadu/",
+    "email": "mailto:hello@felmon.tech"
+  },
+  "metrics": [
+    {
+      "value": "14",
+      "label": "upstream PRs merged",
+      "source": "https://github.com/search?q=author%3Afelmonon+is%3Apr+is%3Amerged+-user%3Afelmonon&type=pullrequests"
+    },
+    {
+      "value": "7",
+      "label": "upstream repositories",
+      "source": "https://github.com/search?q=author%3Afelmonon+is%3Apr+is%3Amerged+-user%3Afelmonon&type=pullrequests"
+    },
+    {
+      "value": "5",
+      "label": "open-source organizations",
+      "source": "https://github.com/search?q=author%3Afelmonon+is%3Apr+is%3Amerged+-user%3Afelmonon&type=pullrequests"
+    },
+    {
+      "value": "7",
+      "label": "paying TypeJung users",
+      "source": "https://typejung.com"
+    }
+  ],
+  "projects": [
+    {
+      "index": "01",
+      "title": "Agent Reliability Harness",
+      "category": "Applied AI reliability",
+      "problem": "Agents can complete tasks while violating tool, budget, safety, or grounding requirements.",
+      "built": "A Python evaluator for schemas, budgets, safety patterns, citations, and CI-readable reports.",
+      "decision": "A standard-library runtime with independent checks, keeping CI adoption simple.",
+      "result": "35 tests on Python 3.11 and 3.12 across passing and failing traces.",
+      "stack": ["Python", "Agent evaluation", "GitHub Actions"],
+      "links": [
+        {
+          "label": "Review repository",
+          "href": "https://github.com/felmonon/agent-reliability-harness"
+        },
+        {
+          "label": "Read sample report",
+          "href": "https://github.com/felmonon/agent-reliability-harness#example"
+        }
+      ]
+    },
+    {
+      "index": "02",
+      "title": "MSW Inspector",
+      "category": "Developer tooling",
+      "problem": "Mock handlers drift from real API calls, hiding coverage gaps.",
+      "built": "A TypeScript CLI and GitHub Action that compares AST-parsed handlers and calls.",
+      "decision": "ts-morph over text matching to understand fetch, Axios, and handler code.",
+      "result": "A public package and Marketplace action with contributors, cross-platform CI, releases, and a roadmap.",
+      "stack": ["TypeScript", "ts-morph", "GitHub Actions"],
+      "links": [
+        {
+          "label": "Review repository",
+          "href": "https://github.com/felmonon/msw-inspector"
+        },
+        {
+          "label": "Open Marketplace action",
+          "href": "https://github.com/marketplace/actions/msw-inspector"
+        }
+      ]
+    },
+    {
+      "index": "03",
+      "title": "TypeJung",
+      "category": "Full-stack product",
+      "problem": "An assessment needs reliable account, payment, persistence, and recovery paths to become a product.",
+      "built": "Assessment UX, auth, persisted results, Stripe payments, email capture, and AI reports.",
+      "decision": "Bound model output inside a deterministic workflow; keep billing and account state outside it.",
+      "result": "22 registered and 7 paying users as of July 13, 2026; CA$74 recorded June 29.",
+      "stack": ["React", "TypeScript", "Supabase", "Stripe"],
+      "links": [
+        {
+          "label": "Use live product",
+          "href": "https://typejung.com"
+        },
+        {
+          "label": "Review source",
+          "href": "https://github.com/felmonon/jungian-typology-assessment"
+        }
+      ]
+    }
+  ],
+  "openSource": [
+    {
+      "organization": "Astro",
+      "count": 5,
+      "source": "https://github.com/search?q=repo%3Awithastro%2Fastro+author%3Afelmonon+is%3Apr+is%3Amerged&type=pullrequests"
+    },
+    {
+      "organization": "OpenAI",
+      "count": 4,
+      "source": "https://github.com/search?q=author%3Afelmonon+is%3Apr+is%3Amerged+org%3Aopenai&type=pullrequests"
+    },
+    {
+      "organization": "MSW",
+      "count": 2,
+      "source": "https://github.com/search?q=repo%3Amswjs%2Fmsw+author%3Afelmonon+is%3Apr+is%3Amerged&type=pullrequests"
+    },
+    {
+      "organization": "Google",
+      "count": 2,
+      "source": "https://github.com/search?q=author%3Afelmonon+is%3Apr+is%3Amerged+org%3Agoogle&type=pullrequests"
+    },
+    {
+      "organization": "comma.ai",
+      "count": 1,
+      "source": "https://github.com/search?q=author%3Afelmonon+is%3Apr+is%3Amerged+org%3Acommaai&type=pullrequests"
+    }
+  ],
+  "selectedPullRequests": [
+    {
+      "label": "OpenAI Agents SDK — SQLAlchemy first-write race",
+      "href": "https://github.com/openai/openai-agents-python/pull/2725"
+    },
+    {
+      "label": "MSW — infinite-delay open handles",
+      "href": "https://github.com/mswjs/msw/pull/2669"
+    },
+    {
+      "label": "Astro — language-server completion behavior",
+      "href": "https://github.com/withastro/astro/pull/15927"
+    }
+  ]
+}

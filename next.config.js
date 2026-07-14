@@ -1,7 +1,18 @@
+const canonicalHosts = [
+  'www.felmon.tech',
+  'felmonfekadu.com',
+  'www.felmonfekadu.com',
+]
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['github.com', 'avatars.githubusercontent.com'],
+  async redirects() {
+    return canonicalHosts.map((host) => ({
+      source: '/:path*',
+      has: [{ type: 'host', value: host }],
+      destination: 'https://felmon.tech/:path*',
+      permanent: true,
+    }))
   },
 }
 

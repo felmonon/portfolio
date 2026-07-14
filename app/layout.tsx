@@ -1,53 +1,65 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import portfolio from '@/content/portfolio.json'
 import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://felmon.tech'),
-  title: 'Felmon Fekadu | Full-Stack Product Engineer',
+  title: 'Felmon Fekadu | Full-Stack Software Engineer',
   description:
-    'Calgary-based full-stack product engineer building TypeScript, Python, AI, auth, payments, and open-source systems.',
+    'Full-stack software engineer building developer tools and applied AI products with TypeScript and Python.',
   keywords: [
     'Software Engineer',
-    'Full-Stack Product Engineer',
-    'AI Engineer',
+    'Full-Stack Engineer',
+    'Developer Tools',
+    'Applied AI',
     'TypeScript',
     'Python',
-    'Next.js',
     'React',
     'Node.js',
-    'PostgreSQL',
     'Open Source',
-    'Engineering Portfolio',
     'Felmon Fekadu',
   ],
-  authors: [{ name: 'Felmon Fekadu' }],
-  alternates: {
-    canonical: '/',
+  authors: [{ name: 'Felmon Fekadu', url: 'https://felmon.tech' }],
+  creator: 'Felmon Fekadu',
+  alternates: { canonical: '/' },
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '128x128' },
+    ],
+    shortcut: '/favicon.ico',
   },
   openGraph: {
-    title: 'Felmon Fekadu | Full-Stack Product Engineer',
+    title: 'Felmon Fekadu | Full-Stack Software Engineer',
     description:
-      'Shipped TypeScript/Python products with auth, Stripe payments, AI workflows, real-time systems, and maintainer-reviewed OSS work.',
-    type: 'website',
+      'Developer tools, applied AI products, and 14 maintainer-reviewed upstream contributions.',
     url: 'https://felmon.tech',
+    type: 'website',
     siteName: 'Felmon Fekadu',
     locale: 'en_CA',
     images: [
       {
-        url: '/images/felmon-portrait.jpg',
+        url: '/opengraph-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Felmon Fekadu',
+        alt: 'Felmon Fekadu — full-stack software engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Felmon Fekadu | Full-Stack Product Engineer',
-    description:
-      'Calgary-based full-stack product engineer building TypeScript, Python, AI, auth, payments, and open-source systems.',
-    images: ['/images/felmon-portrait.jpg'],
+    title: 'Felmon Fekadu | Full-Stack Software Engineer',
+    description: 'Developer tools, applied AI products, and reviewed open-source work.',
+    images: ['/opengraph-image.jpg'],
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#f2f0e9',
+  colorScheme: 'light',
 }
 
 const personJsonLd = {
@@ -55,46 +67,29 @@ const personJsonLd = {
   '@type': 'Person',
   name: 'Felmon Fekadu',
   url: 'https://felmon.tech',
-  image: 'https://felmon.tech/images/felmon-portrait.jpg',
-  jobTitle: 'Full-Stack Product Engineer',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Independent Engineer',
-  },
+  jobTitle: 'Full-Stack Software Engineer',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Calgary',
-    addressRegion: 'AB',
-    addressCountry: 'CA',
+    addressRegion: 'Alberta',
+    addressCountry: 'Canada',
   },
-  sameAs: [
-    'https://github.com/felmonon',
-    'https://www.linkedin.com/in/felmonfekadu/',
-    'https://typejung.com',
-  ],
+  sameAs: [portfolio.links.github, portfolio.links.linkedin, 'https://typejung.com'],
   knowsAbout: [
     'TypeScript',
     'Python',
     'React',
-    'Next.js',
     'Node.js',
-    'Supabase',
-    'Stripe',
-    'Vercel',
-    'AI product engineering',
-    'Open-source software',
     'Developer tools',
+    'Applied AI',
+    'Open-source software',
   ],
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased">
+    <html lang="en">
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -102,6 +97,8 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
