@@ -14,5 +14,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: 'https://felmon.tech/writing',
+      lastModified: new Date('2026-07-14'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://felmon.tech/writing/deterministic-checks-for-agent-evals',
+      lastModified: new Date('2026-07-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
   ]
 }

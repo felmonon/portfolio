@@ -43,6 +43,7 @@ export default function Home() {
           <nav className={styles.nav} aria-label="Primary navigation">
             <a href="#work">Work</a>
             <a href="#open-source">Open source</a>
+            <a href="/writing">Writing</a>
             <a href="#about">About</a>
             <TrackedLink eventName="resume_download" href={links.resume} download>
               Résumé
