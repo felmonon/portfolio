@@ -78,8 +78,9 @@ export default function Post() {
             same trace can pass on Monday and fail on Tuesday, which trains a team to re-run the
             pipeline instead of reading the failure. It is <strong>expensive</strong>: every push
             burns tokens on questions that mostly have mechanical answers. And it is{' '}
-            <strong>unexplainable</strong> in the way that matters for debugging: &ldquo;the judge
-            scored this 6/10&rdquo; does not tell you which step to fix.
+            <strong>unexplainable</strong>{' '}
+            in the way that matters for debugging: &ldquo;the judge scored this 6/10&rdquo; does
+            not tell you which step to fix.
           </p>
           <p>
             None of that means judges are useless. It means the merge path is the wrong place for
