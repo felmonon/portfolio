@@ -112,7 +112,7 @@ export default function SelectedWorkPage() {
         <p className={styles.introCopy}>
           Three projects that best represent the work I want to do next: developer tools, open-source
           systems, and applied AI products. Across these projects and other upstream contributions, I
-          have had 14 pull requests accepted across six organizations.
+          have had 14 upstream pull requests merged across eight repositories in five organizations.
         </p>
         <dl className={styles.profileMeta}>
           <div>
