@@ -31,19 +31,25 @@ export default function Home() {
       className={`${styles.page} ${sans.variable} ${serif.variable} ${mono.variable}`}
       id="top"
     >
+      <a className={styles.skipLink} href="#work">
+        Skip to selected work
+      </a>
+
       <header className={styles.header}>
-        <a className={styles.identity} href="#top" aria-label="Felmon Fekadu, home">
-          Felmon Fekadu
-        </a>
-        <nav className={styles.nav} aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a href="#open-source">Open source</a>
-          <a href="#about">About</a>
-          <TrackedLink eventName="resume_download" href={links.resume} download>
-            Résumé
-          </TrackedLink>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div className={styles.headerInner}>
+          <a className={styles.identity} href="#top" aria-label="Felmon Fekadu, home">
+            Felmon Fekadu
+          </a>
+          <nav className={styles.nav} aria-label="Primary navigation">
+            <a href="#work">Work</a>
+            <a href="#open-source">Open source</a>
+            <a href="#about">About</a>
+            <TrackedLink eventName="resume_download" href={links.resume} download>
+              Résumé
+            </TrackedLink>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
       </header>
 
       <section className={styles.hero} aria-labelledby="hero-title">
@@ -315,6 +321,9 @@ export default function Home() {
       <footer className={styles.footer}>
         <span>Felmon Fekadu · Calgary, Alberta</span>
         <span>{verification.label}</span>
+        <a className={styles.backToTop} href="#top">
+          Back to top ↑
+        </a>
       </footer>
     </main>
   )

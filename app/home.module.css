@@ -9,6 +9,7 @@
   --accent: #225c50;
   --accent-dark: #173f37;
   --content-width: 70rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   min-height: 100vh;
   background: var(--paper);
   color: var(--ink);
@@ -21,7 +22,7 @@
   box-sizing: border-box;
 }
 
-.header,
+.headerInner,
 .hero,
 .proof,
 .section,
@@ -33,13 +34,48 @@
   margin-inline: auto;
 }
 
+.skipLink {
+  position: fixed;
+  top: 0.75rem;
+  left: 50%;
+  z-index: 60;
+  padding: 0.6rem 1.1rem;
+  background: var(--accent-dark);
+  color: var(--paper-raised);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transform: translate(-50%, calc(-100% - 1.5rem));
+  transition: transform 0.2s var(--ease-out);
+}
+
+.skipLink:focus-visible {
+  transform: translate(-50%, 0);
+}
+
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  backdrop-filter: blur(12px) saturate(1.1);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .header {
+    background: var(--paper);
+  }
+}
+
+.headerInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  min-height: 5rem;
-  border-bottom: 1px solid var(--line);
+  min-height: 4.25rem;
 }
 
 .identity {
@@ -66,6 +102,29 @@
   text-underline-offset: 0.22em;
 }
 
+.nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0.55rem;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.nav a:hover::after,
+.nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
 .inlineLinks a,
 .textAction,
 .orgList a,
@@ -74,12 +133,23 @@
   text-underline-offset: 0.22em;
 }
 
+.nav a,
+.identity,
+.inlineLinks a,
+.textAction,
+.orgList a,
+.selectedPrs a,
+.backToTop {
+  transition: color 0.18s ease;
+}
+
 .nav a:hover,
 .identity:hover,
 .inlineLinks a:hover,
 .textAction:hover,
 .orgList a:hover,
-.selectedPrs a:hover {
+.selectedPrs a:hover,
+.backToTop:hover {
   color: var(--accent);
 }
 
@@ -124,6 +194,21 @@
   max-width: 62rem;
   font-size: clamp(3.3rem, 8vw, 6.7rem);
   line-height: 0.96;
+}
+
+.hero h1,
+.sectionIntro h2,
+.about h2,
+.contact h2 {
+  text-wrap: balance;
+}
+
+.heroCopy,
+.sectionIntro > p:last-child,
+.aboutCopy > p,
+.contact > p:not(.eyebrow),
+.projectDetails dd {
+  text-wrap: pretty;
 }
 
 .heroCopy {
@@ -181,6 +266,22 @@
   border: 1px solid var(--accent-dark);
   font-weight: 600;
   text-decoration: none;
+  transition:
+    background 0.18s ease,
+    transform 0.18s var(--ease-out),
+    box-shadow 0.18s ease;
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -10px rgba(23, 25, 22, 0.45);
+}
+
+.primaryAction:active,
+.secondaryAction:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .primaryAction {
@@ -231,8 +332,31 @@
 .proof a {
   display: grid;
   gap: 0.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line-dark);
   color: inherit;
   text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.proof a:hover,
+.proof a:focus-visible {
+  border-top-color: var(--accent);
+}
+
+.proof a:hover strong {
+  color: var(--accent-dark);
+}
+
+.proof span::after {
+  content: ' ↗';
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.proof a:hover span::after,
+.proof a:focus-visible span::after {
+  opacity: 0.85;
 }
 
 .proof strong {
@@ -240,6 +364,7 @@
   font-size: 2rem;
   font-weight: 500;
   line-height: 1;
+  transition: color 0.2s ease;
 }
 
 .proof span {
@@ -251,7 +376,7 @@
 .openSource,
 .about,
 .contact {
-  scroll-margin-top: 2rem;
+  scroll-margin-top: 5.25rem;
   padding-block: clamp(4.5rem, 7vw, 6.5rem);
 }
 
@@ -410,6 +535,9 @@
   place-items: center;
   border: 1px solid var(--line);
   background: var(--paper-raised);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s var(--ease-out);
 }
 
 .orgLogo {
@@ -417,10 +545,18 @@
   width: 1.25rem;
   height: 1.25rem;
   opacity: 0.78;
+  transition: opacity 0.2s ease;
 }
 
-.orgList dt a:hover .orgLogoFrame {
+.orgList dt a:hover .orgLogoFrame,
+.orgList dt a:focus-visible .orgLogoFrame {
   border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.orgList dt a:hover .orgLogo,
+.orgList dt a:focus-visible .orgLogo {
+  opacity: 1;
 }
 
 .orgList dd {
@@ -500,22 +636,71 @@
   font-size: 0.68rem;
 }
 
+.backToTop {
+  color: var(--ink-faint);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero .eyebrow,
+  .hero h1,
+  .heroCopy,
+  .heroOrganizations,
+  .hero .heroActions {
+    animation: rise 0.65s var(--ease-out) both;
+  }
+
+  .hero h1 {
+    animation-delay: 0.07s;
+  }
+
+  .heroCopy {
+    animation-delay: 0.14s;
+  }
+
+  .heroOrganizations {
+    animation-delay: 0.21s;
+  }
+
+  .hero .heroActions {
+    animation-delay: 0.28s;
+  }
+
+  @supports (animation-timeline: view()) {
+    .sectionIntro,
+    .project,
+    .ossGrid,
+    .aboutCopy {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
+  }
+}
+
 @media (max-width: 52rem) {
-  .header {
+  .headerInner {
     align-items: flex-start;
-    padding-block: 1rem;
+    padding-block: 0.6rem;
   }
 
   .nav {
     max-width: 27rem;
     flex-wrap: wrap;
     gap: 0.2rem 1rem;
-  }
-
-  .nav a {
-    min-height: 2.75rem;
-    display: inline-flex;
-    align-items: center;
   }
 
   .proof ul {
@@ -534,7 +719,7 @@
 }
 
 @media (max-width: 38rem) {
-  .header,
+  .headerInner,
   .hero,
   .proof,
   .section,
@@ -546,12 +731,24 @@
   }
 
   .header {
+    position: static;
+  }
+
+  .headerInner {
     display: block;
+    padding-block: 0.75rem 0.5rem;
   }
 
   .nav {
     justify-content: flex-start;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .section,
+  .openSource,
+  .about,
+  .contact {
+    scroll-margin-top: 1.5rem;
   }
 
   .hero h1 {
