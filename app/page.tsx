@@ -150,6 +150,10 @@ export default function Home() {
                     <dt>Verified result</dt>
                     <dd>{project.result}</dd>
                   </div>
+                  <div>
+                    <dt>What I learned</dt>
+                    <dd>{project.learned}</dd>
+                  </div>
                 </dl>
                 <ul className={styles.stack} aria-label={`${project.title} technologies`}>
                   {project.stack.map((item) => (
@@ -164,7 +168,7 @@ export default function Home() {
                       eventData={{ project: project.title, destination: link.label }}
                       href={link.href}
                       key={link.href}
-                      {...externalProps}
+                      {...(link.href.startsWith('http') ? externalProps : {})}
                     >
                       {link.label}
                     </TrackedLink>
@@ -182,7 +186,9 @@ export default function Home() {
           <h2 id="oss-title">Reviewed in public.</h2>
           <p>
             Fourteen changes accepted across seven repositories, spanning reliability, typing,
-            language tooling, accessibility, documentation, and test performance.
+            language tooling, accessibility, documentation, and test performance. I also maintain
+            MSW Inspector end to end and hold Astro&rsquo;s L1 Contributor role, with weekly
+            reviews and issue triage.
           </p>
         </div>
 
@@ -257,6 +263,13 @@ export default function Home() {
             <div>
               <dt>Target roles</dt>
               <dd>Full-stack, developer tools, platform, applied AI</dd>
+            </div>
+            <div>
+              <dt>Currently</dt>
+              <dd>
+                Maintaining MSW Inspector, contributing weekly to Astro, and interviewing for
+                full-time roles — updated July 13, 2026
+              </dd>
             </div>
           </dl>
         </div>

@@ -67,14 +67,28 @@ const personJsonLd = {
   '@type': 'Person',
   name: 'Felmon Fekadu',
   url: 'https://felmon.tech',
+  image: 'https://felmon.tech/opengraph-image.jpg',
   jobTitle: 'Full-Stack Software Engineer',
+  description:
+    'Full-stack software engineer building developer tools and applied AI products with TypeScript and Python. 14 merged upstream pull requests across OpenAI, Astro, MSW, Google, and comma.ai.',
+  email: 'mailto:hello@felmon.tech',
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'University of the People',
+    sameAs: 'https://www.uopeople.edu',
+  },
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Calgary',
     addressRegion: 'Alberta',
     addressCountry: 'Canada',
   },
-  sameAs: [portfolio.links.github, portfolio.links.linkedin, 'https://typejung.com'],
+  sameAs: [
+    portfolio.links.github,
+    portfolio.links.linkedin,
+    'https://www.npmjs.com/~felmonon',
+    'https://typejung.com',
+  ],
   knowsAbout: [
     'TypeScript',
     'Python',

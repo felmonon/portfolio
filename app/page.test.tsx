@@ -57,6 +57,10 @@ describe('Home page', () => {
       'href',
       'mailto:hello@felmon.tech'
     )
+    const caseStudyLink = screen.getByRole('link', { name: /Read case study: MSW Inspector/i })
+    expect(caseStudyLink).toHaveAttribute('href', '/case-studies/msw-inspector')
+    expect(caseStudyLink).not.toHaveAttribute('target')
+    expect(screen.getAllByText(/What I learned/i)).toHaveLength(3)
     expect(screen.getAllByText(/Verified July 13, 2026/i)).toHaveLength(2)
   })
 
