@@ -42,7 +42,11 @@
       "decision": "A standard-library runtime with independent checks, keeping CI adoption simple.",
       "result": "35 tests on Python 3.11 and 3.12 across passing and failing traces.",
       "learned": "Deterministic policy checks beat model-judged evals in CI: cheaper, explainable, and reproducible.",
-      "stack": ["Python", "Agent evaluation", "GitHub Actions"],
+      "stack": [
+        "Python",
+        "Agent evaluation",
+        "GitHub Actions"
+      ],
       "links": [
         {
           "label": "Review repository",
@@ -63,7 +67,11 @@
       "decision": "ts-morph over text matching to understand fetch, Axios, and handler code.",
       "result": "A public package and Marketplace action with contributors, cross-platform CI, releases, and a roadmap.",
       "learned": "Maintaining a public tool means docs, releases, and contributor experience matter as much as the parser.",
-      "stack": ["TypeScript", "ts-morph", "GitHub Actions"],
+      "stack": [
+        "TypeScript",
+        "ts-morph",
+        "GitHub Actions"
+      ],
       "links": [
         {
           "label": "Read case study",
@@ -88,7 +96,12 @@
       "decision": "Bound model output inside a deterministic workflow; keep billing and account state outside it.",
       "result": "22 registered and 7 paying users as of July 13, 2026; CA$74 recorded June 29.",
       "learned": "Real payments shift the work: recovery paths, webhook idempotency, and account-state edge cases dominate after launch.",
-      "stack": ["React", "TypeScript", "Supabase", "Stripe"],
+      "stack": [
+        "React",
+        "TypeScript",
+        "Supabase",
+        "Stripe"
+      ],
       "links": [
         {
           "label": "Use live product",
@@ -130,16 +143,16 @@
   ],
   "selectedPullRequests": [
     {
-      "label": "OpenAI Agents SDK — SQLAlchemy first-write race",
-      "href": "https://github.com/openai/openai-agents-python/pull/2725"
+      "label": "OpenAI Agents SDK — MCP tool metadata isolation",
+      "href": "https://github.com/openai/openai-agents-python/pull/3114"
     },
     {
       "label": "MSW — infinite-delay open handles",
       "href": "https://github.com/mswjs/msw/pull/2669"
     },
     {
-      "label": "Astro — language-server completion behavior",
-      "href": "https://github.com/withastro/astro/pull/15927"
+      "label": "Astro — live-collection loader typing",
+      "href": "https://github.com/withastro/astro/pull/16018"
     }
   ]
 }
