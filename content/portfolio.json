@@ -37,20 +37,24 @@
       "index": "01",
       "title": "Agent Reliability Harness",
       "category": "Applied AI reliability",
-      "problem": "Agents can complete tasks while violating tool, budget, safety, or grounding requirements.",
-      "built": "A Python evaluator for schemas, budgets, safety patterns, citations, and CI-readable reports.",
-      "decision": "A standard-library runtime with independent checks, keeping CI adoption simple.",
-      "result": "35 tests on Python 3.11 and 3.12 across passing and failing traces.",
+      "problem": "An agent can return a perfect-looking final answer while double-issuing refunds, skipping checks, or leaking secrets along the way.",
+      "built": "A trajectory-regression harness on PyPI: policy-as-code trajectory rules, baseline-vs-candidate CI gates, OpenAI/Anthropic transcript adapters, JUnit/SARIF reports.",
+      "decision": "Zero runtime dependencies and byte-deterministic reports, so the evaluator itself can never flake a CI pipeline.",
+      "result": "v0.2.1 on PyPI; 194 tests across 3 OSes and Python 3.11-3.13; benchmark precision/recall 1.0 on 34 seeded failures; a live demo PR blocked by the gate.",
       "learned": "Deterministic policy checks beat model-judged evals in CI: cheaper, explainable, and reproducible.",
-      "stack": ["Python", "Agent evaluation", "GitHub Actions"],
+      "stack": ["Python", "Agent evaluation", "GitHub Actions", "PyPI"],
       "links": [
+        {
+          "label": "Install from PyPI",
+          "href": "https://pypi.org/project/agent-reliability-harness/"
+        },
+        {
+          "label": "Watch the gate block a double refund",
+          "href": "https://github.com/felmonon/arh-demo-refund-agent/pull/1"
+        },
         {
           "label": "Review repository",
           "href": "https://github.com/felmonon/agent-reliability-harness"
-        },
-        {
-          "label": "Read sample report",
-          "href": "https://github.com/felmonon/agent-reliability-harness#example"
         }
       ]
     },

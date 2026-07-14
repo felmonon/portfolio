@@ -155,6 +155,23 @@ SUMMARY: 1/3 traces passed, average score 83.3/100`}</code>
             a bad user experience. Deterministic gates do not replace evaluation; they are the
             floor that makes everything above them cheaper to build.
           </p>
+          <h2>See it block a real regression</h2>
+          <p>
+            Since writing this, the harness has grown into a trajectory-regression tool and
+            shipped to PyPI (<code>pip install agent-reliability-harness</code>). The clearest
+            proof of the argument above is now{' '}
+            <a
+              href="https://github.com/felmonon/arh-demo-refund-agent/pull/1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              a live pull request
+            </a>{' '}
+            in a demo repo: a harmless-looking prompt edit makes a refund agent call its
+            irreversible refund tool twice, the final answer to the customer stays flawless, and
+            the deterministic gate fails the build in nine seconds with two stable rule IDs. A
+            model-judged eval reading that final answer would have approved the merge.
+          </p>
           <p>
             The code, sample policies, and failing traces are in{' '}
             <a
